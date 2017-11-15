@@ -1,8 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const userSchema = new Schema({
-  // Should the username and password be in this schema?
+const guestSchema = new Schema({
   firstName: { type: String, 
     required: true 
   },
@@ -23,18 +22,9 @@ const userSchema = new Schema({
   },
   eventURL: { type: String, 
     required: true 
-  },
-  savedGuests: { type: Array, 
-    required: true 
-  },
-  hostedEventHistory: { type: Array, 
-    required: true 
-  },
-  attendedEventHistory: { type: Array, 
-    required: true 
   }
 });
 
-const User = mongoose.model("User", userSchema);
+const Guest = mongoose.model("Guest", guestSchema);
 
-module.exports = User;
+module.exports = Guest;

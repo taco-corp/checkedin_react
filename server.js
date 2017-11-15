@@ -20,7 +20,7 @@ app.use(routes);
 mongoose.Promise = global.Promise;
 // Connect to the Mongo DB
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/checkedinreact",
+  process.env.MONGODB_URI || "mongodb://localhost/checkedin_react",
   {
     useMongoClient: true
   }

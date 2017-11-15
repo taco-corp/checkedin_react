@@ -1,7 +1,9 @@
 const router = require("express").Router();
-const mainRoutes = require("./main");
+// This was giving an error so I commented it out-Steve
+// const mainRoutes = require("./main");
 
 // new routes
-router.use("/main", mainRoutes);
+// This was giving an error so I commented it out-Steve
+// router.use("/main", mainRoutes);
 
 module.exports = router;

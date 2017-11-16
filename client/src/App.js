@@ -19,10 +19,9 @@ const App = () =>
           <Wrapper>
             <Route exact path="/" component={Index} />
             <Route exact path="/index" component={Index} />
-            <Route exact path="/event" component={Event} />
+            <Route exact path="/event/" component={Event} />
             <Route exact path="/home" component={Home} />
             <Route exact path="/newevent" component={Newevent} />
-            
           </Wrapper>
       <Footer />
     </div>

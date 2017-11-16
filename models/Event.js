@@ -36,7 +36,7 @@ const eventSchema = new Schema({
         default: Date.now 
   },
   // Need to check if this will allow us to populate multiple event guests 
-  guest: {
+  guests: {
     type: Schema.Types.ObjectId,
     ref: "Guest"
   }

@@ -4,6 +4,7 @@ import Event from "./pages/Event";
 import Home from "./pages/Home";
 import Index from "./pages/Index";
 import Newevent from "./pages/Newevent";
+import Login from "./pages/Login";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
@@ -22,6 +23,7 @@ const App = () =>
             <Route exact path="/event/" component={Event} />
             <Route exact path="/home" component={Home} />
             <Route exact path="/newevent" component={Newevent} />
+            <Route exact path="/login" component={Login} />
           </Wrapper>
       <Footer />
     </div>

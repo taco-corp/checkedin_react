@@ -25,10 +25,14 @@ passport.use(new LinkedInStrategy({
 }));
 
 router.route('/linkedin/callback')
-.get(passport.authenticate('linkedin', {
-    successRedirect: '/',
-    failureRedirect: '/login'
-}));
+.get(passport.authenticate('linkedin', { failureRedirect: '/login' }),
+        function(req, res) {
+            // Successful authentication
+            // Do something with the user info here
+            // res.json(req.user);
+            console.log(req.user);
+            res.redirect('/');
+        });
 
 router.route('/linkedin')
 .get(passport.authenticate('linkedin', { state: 'SOME STATE'  }));

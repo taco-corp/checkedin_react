@@ -3,10 +3,10 @@ import "./Wrapper.css";
 
 class Wrapper extends Component{
 	state = {
-      isLoggedIn: false
+      isLoggedIn: true
   	}
 	render() {
-		if(this.state.isLoggedIn == true) {		
+		if(this.state.isLoggedIn === true) {		
 			return (
 				<div>
 					<main className="wrapper" {...this.props} />

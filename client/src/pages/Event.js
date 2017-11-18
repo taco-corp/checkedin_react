@@ -12,8 +12,8 @@ class Event extends Component {
             <h1>Event Title Goes Here</h1>
         </row>
         <row className="col-md-12 thumbnail">
-          <div id="eventcheckinbtn" class="container col-md-4 col-md-offset-4">
-            <a class="btn btn-primary btn-lg btn-block" href="/auth/linkedin/{{key.sanitized_event_name}}" id="submit2" width="300">Get CheckedIn with LinkedIn</a>
+          <div id="eventcheckinbtn" className="container col-md-4 col-md-offset-4">
+            <a className="btn btn-primary btn-lg btn-block" href="/auth/linkedin/{{key.sanitized_event_name}}" id="submit2" width="300">Get CheckedIn with LinkedIn</a>
           </div>
         </row>
         <row>

@@ -11,17 +11,17 @@ class Newevent extends Component {
 
             <div className="Event">
                 
-                <form id="event-form" class="container">
+                <form id="event-form" className="container">
                     <h2>Create Your Event</h2>
-                    <input type="text" placeholder="Event Hosts Name (required)" name="" id="inputHost" class="form-control" required />
-                    <input type="text" placeholder="Event Location (required)" name="" id="inputLocation" class="form-control" required />
-                    <input type="text" placeholder="Event Name (required)" name="" id="inputName" class="form-control" required />
-                    <input type="text" placeholder="Event Description (required)" name="" id="inputDescription" class="form-control" required />
-                    <input type="text" placeholder="Event Keyword #1 (required)" name="" id="inputKeyword1" class="form-control"/>
-                    <input type="text" placeholder="Event Keyword #2" name="" id="inputKeyword2" class="form-control"/>
-                    <input type="text" placeholder="Event Keyword #3" name="" id="inputKeyword3" class="form-control"/>
+                    <input type="text" placeholder="Event Hosts Name (required)" name="" id="inputHost" className="form-control" required />
+                    <input type="text" placeholder="Event Location (required)" name="" id="inputLocation" className="form-control" required />
+                    <input type="text" placeholder="Event Name (required)" name="" id="inputName" className="form-control" required />
+                    <input type="text" placeholder="Event Description (required)" name="" id="inputDescription" className="form-control" required />
+                    <input type="text" placeholder="Event Keyword #1 (required)" name="" id="inputKeyword1" className="form-control"/>
+                    <input type="text" placeholder="Event Keyword #2" name="" id="inputKeyword2" className="form-control"/>
+                    <input type="text" placeholder="Event Keyword #3" name="" id="inputKeyword3" className="form-control"/>
                     {/* <!-- Event Button --> */}
-                    <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">Create Event</button>
+                    <button type="submit" className="btn btn-primary btn-lg btn-block" id="submit">Create Event</button>
 
                 </form>
 

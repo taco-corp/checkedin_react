@@ -2,6 +2,6 @@ import axios from "axios";
 
 export default {
   login: function() {
-    return axios.get("auth/linkedin");
+    return axios.get("api/auth/linkedin");
   }
 };

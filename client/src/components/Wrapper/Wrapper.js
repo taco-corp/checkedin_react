@@ -1,6 +1,23 @@
-import React from "react";
+import React, { Component } from 'react';
 import "./Wrapper.css";
 
-const Wrapper = props => <main className="wrapper" {...props} />;
+class Wrapper extends Component{
+	state = {
+      isLoggedIn: false
+  	}
+	render() {
+		if(this.state.isLoggedIn == true) {		
+			return (
+				<div>
+					<main className="wrapper" {...this.props} />
+				</div>
+			);
+		} else {
+			return (
+				<p>NOT LOGGED IN...</p>
+			);
+		}
+	}
+}
 
 export default Wrapper;

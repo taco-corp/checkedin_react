@@ -1,6 +1,25 @@
-import React from "react";
+import React, { Component } from 'react';
+import '../App.css';
+import NewEvent from "../components/NewEvent";
+import HistoryOfEvents from "../components/HistoryOfEvents";
+import SavedPeople from "../components/SavedPeople";
 
 
-const Home = () =>
-<div>Home Page type stuff goes here!</div>
+
+class Home extends Component {
+  render() {
+    return (
+       
+        <div> 
+            <NewEvent />
+            <HistoryOfEvents />
+            <SavedPeople />
+        </div>
+        );
+    }
+}
+
+
+
+
 export default Home;

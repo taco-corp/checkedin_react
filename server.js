@@ -1,9 +1,10 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const mongoose = require("mongoose");
-const routes = require("./routes");
-const ids = require("./ids");
-const app = express();
+var express = require("express");
+var bodyParser = require("body-parser");
+var mongoose = require("mongoose");
+var routes = require("./routes");
+var ids = require("./ids");
+var app = express();
+var passport = require('passport')
 const PORT = process.env.PORT || 8080;
 var db = require("./models");
 

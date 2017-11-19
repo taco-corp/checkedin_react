@@ -29,6 +29,9 @@ const Navbar = props =>
         <li className={window.location.pathname === "/newevent" ? "active" : ""}>
           <Link to="/newevent">Create Event</Link>
         </li>
+        <li className={window.location.pathname === "/newevent" ? "active" : ""}>
+          <Link to="/login">Login</Link>
+        </li>
       </ul>
     </div>
   </nav>;

@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const eventSchema = new Schema({
+  // update hostName to use the info from linkedin if possible
   hostName: { type: String, 
     trim: true,
     required: "Host Name is Required" 
@@ -36,7 +37,7 @@ const eventSchema = new Schema({
         default: Date.now 
   },
   // Need to check if this will allow us to populate multiple event guests 
-  guests: [
+  User: [
     {
       type: Schema.Types.ObjectId,
       ref: "User"

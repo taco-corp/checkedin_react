@@ -8,6 +8,21 @@ var LINKEDIN_CLIENT_SECRET = ids.LINKEDIN_CLIENT_SECRET;
 var CALLBACKURL = ids.CALLBACKURL;
 var LinkedInStrategy = require('passport-linkedin-oauth2').Strategy;
 
+// Passport session setup.
+//   To support persistent login sessions, Passport needs to be able to
+//   serialize users into and deserialize users out of the session.  Typically,
+//   this will be as simple as storing the user ID when serializing, and finding
+//   the user by ID when deserializing.  However, since this example does not
+//   have a database of user records, the complete Linkedin profile is
+//   serialized and deserialized.
+passport.serializeUser(function(user, done) {
+    done(null, user);
+});
+
+passport.deserializeUser(function(obj, done) {
+    done(null, obj);
+});
+
 passport.use(new LinkedInStrategy({
     clientID: LINKEDIN_CLIENT_ID,
     clientSecret: LINKEDIN_CLIENT_SECRET,
@@ -31,7 +46,7 @@ router.route('/linkedin/callback')
             // Do something with the user info here
             // res.json(req.user);
             console.log(req.user);
-            res.redirect('/');
+            res.redirect('http://localhost:3000/');
         });
 
 router.route('/linkedin')

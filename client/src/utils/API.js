@@ -1,4 +1,4 @@
-import axios from "axios";
+var axios = require("axios");
 
 export default {
   login: function() {

@@ -4,7 +4,7 @@ import "./EventGuests.css";
 import Attendee from '../Attendee'
 
 const EventGuests = () => 
-<div className="col-md-8 bottom thumbnail">
+<div className="col-md-7 col-md-offset-1 thumbnail">
     <div className="">
     <h1>Event Guests</h1>
     </div>

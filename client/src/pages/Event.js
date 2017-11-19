@@ -13,10 +13,8 @@ class Event extends Component {
       
       <div className="App">
         <EventHeader />
-        <Row>
-          <EventGuests />
-          <EventInfo />
-        </Row>
+        <EventGuests />
+        <EventInfo />
       </div>
     );
   }

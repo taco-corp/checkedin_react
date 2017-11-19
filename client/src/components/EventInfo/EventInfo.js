@@ -2,7 +2,7 @@ import React from "react";
 import "./EventInfo.css";
 
 const NewEvent = () => 
-    <div className="col-md-4 thumbnail">
+    <div className="col-md-3 thumbnail">
         <h1>Event Information</h1>
 
         <div>

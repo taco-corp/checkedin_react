@@ -36,10 +36,12 @@ const eventSchema = new Schema({
         default: Date.now 
   },
   // Need to check if this will allow us to populate multiple event guests 
-  guests: {
-    type: Schema.Types.ObjectId,
-    ref: "Guest"
-  }
+  guests: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "User"
+    }
+  ]  
 
 });
 

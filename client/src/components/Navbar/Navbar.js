@@ -27,7 +27,7 @@ const Navbar = props =>
           <Link to="/event">Event</Link>
         </li>
         <li className={window.location.pathname === "/newevent" ? "active" : ""}>
-          <Link to="/newevent">Newevent</Link>
+          <Link to="/newevent">Create Event</Link>
         </li>
         <li className={window.location.pathname === "/newevent" ? "active" : ""}>
           <Link to="/login">Login</Link>

@@ -1,8 +1,10 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const mongoose = require("mongoose");
-const routes = require("./routes");
-const app = express();
+var express = require("express");
+var bodyParser = require("body-parser");
+var mongoose = require("mongoose");
+var routes = require("./routes");
+var passport = require('passport');
+var app = express();
+
 const PORT = process.env.PORT || 8080;
 var db = require("./models");
 
@@ -10,14 +12,16 @@ var db = require("./models");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 // Serve up static assets
-// app.use(express.static("client/public"));
 app.use(express.static("client/public"));
+
+app.use(passport.initialize());
 
 // Add routes, both API and view
 app.use(routes);
 
 // Set up promises with mongoose
 mongoose.Promise = global.Promise;
+
 // Connect to the Mongo DB
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/checkedin_react",

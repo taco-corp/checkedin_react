@@ -1,9 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import Event from "./pages/Event";
 import Home from "./pages/Home";
 import Index from "./pages/Index";
 import Newevent from "./pages/Newevent";
+import Login from "./pages/Login";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
@@ -23,6 +24,7 @@ const App = () =>
             <Route exact path="/home" component={Home} />
             <Route exact path="/newevent" component={Newevent} />
           </Wrapper>
+          <Route exact path="/login" component={Login} />
       <Footer />
     </div>
   </Router>;

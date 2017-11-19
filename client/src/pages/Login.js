@@ -13,7 +13,7 @@ class Login extends Component {
       <div>
 	      <div>Login Page type stuff goes here!</div>
 	      <h2>Welcome! Please log in.</h2>
-		  <a href="http://localhost:8080/api/auth/linkedin">Login with Linkedin</a>
+		  <a href="http://localhost:8080/auth/linkedin">Login with Linkedin</a>
 		  <button className="btn btn-primary btn-lg btn-block" id="login" onClick={this.handleLogin}>Login</button>
 	  </div>
     );

@@ -1,6 +1,21 @@
 const router = require("express").Router();
 const userController = require("../../controllers/userController");
 
+// // Matches with "/api/user"
+// router.route("/")
+//   .get(userController.findAll)
+//   .post(userController.create);
+//
+// // Matches with "/api/user/:id"
+// router
+//   .route("/callback")
+//   .get(userController.findById)
+//   .put(userController.update)
+//   .delete(userController.remove);
+//
+//
+//
+// ------------------------------------------------------------------
 var ids = require("./ids");
 var passport = require('passport');
 var LINKEDIN_CLIENT_ID = ids.LINKEDIN_CLIENT_ID;
@@ -24,8 +39,8 @@ passport.use(new LinkedInStrategy({
     });
 }));
 
-router.route('/linkedin/callback')
-.get(passport.authenticate('linkedin', { failureRedirect: '/login' }),
+router.route('/callback')
+    .get(passport.authenticate('linkedin', { failureRedirect: '/login' }),
         function(req, res) {
             // Successful authentication
             // Do something with the user info here
@@ -34,15 +49,15 @@ router.route('/linkedin/callback')
             res.redirect('/');
         });
 
-router.route('/linkedin')
-.get(
-    passport.authenticate('linkedin', { state: 'SOME STATE'  })
-);
+router.route('/')
+    .get(
+        passport.authenticate('linkedin', { state: 'SOME STATE'  })
+    );
 
 
-// api/auth/test
+// api/auth/linkedin/test
 router.route("/test")
-.get(userController.findAll);
+    .get(userController.findAll);
 
 
 module.exports = router;

@@ -10,11 +10,12 @@ class Login extends Component {
 
   render() {
     return (
-      <div>
-	      <div>Login Page type stuff goes here!</div>
-	      <h2>Welcome! Please log in.</h2>
-		  <button className="btn btn-primary btn-lg btn-block" id="login" onClick={this.handleLogin}>Login</button>
-	  </div>
+      <div className="thumbnail center-text col-md-6 col-md-offset-3">
+	       <h2 className="text-center">Welcome! Please log in.</h2>
+		    <div className="col-md-6 col-md-offset-3">
+        <button className="btn btn-primary btn-lg btn-block" id="login" onClick={this.handleLogin}>Login</button>
+        </div>
+    </div>
     );
   }
 }

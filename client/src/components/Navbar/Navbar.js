@@ -12,6 +12,9 @@ const Navbar = props =>
         </Link>
       </div>
       <ul className="nav navbar-nav">
+        <li className={window.location.pathname === "/login" ? "active" : ""}>
+          <Link to="/login">Login</Link>
+        </li>
         <li
           className={
             window.location.pathname === "/" ||
@@ -22,16 +25,15 @@ const Navbar = props =>
         >
           <Link to="/home">Home</Link>
         </li>
+        <li className={window.location.pathname === "/newevent" ? "active" : ""}>
+          <Link to="/newevent">Create Event</Link>
+        </li>
         <li
           className={window.location.pathname === "/event" ? "active" : ""}>
           <Link to="/event">Event</Link>
         </li>
-        <li className={window.location.pathname === "/newevent" ? "active" : ""}>
-          <Link to="/newevent">Create Event</Link>
-        </li>
-        <li className={window.location.pathname === "/newevent" ? "active" : ""}>
-          <Link to="/login">Login</Link>
-        </li>
+        
+        
       </ul>
     </div>
   </nav>;

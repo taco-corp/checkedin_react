@@ -27,9 +27,12 @@ const eventSchema = new Schema({
     required: "You Must Enter at Least One Keyword" 
   },
   keywordTwo: { type: String,
-    trim: true 
+    trim: true,
   },
   keywordThree: { type: String,
+    trim: true 
+  },
+  eventURL: { type: String,
     trim: true 
   },
   eventCreated: {

@@ -6,7 +6,7 @@ const HistoryOfEvents = () =>
         <div className="thumbnail text-center">
         <h3>List of Events</h3>
         </div>
-        <h4>Bark in the Park  |  11/06/17  |  Hosted by: Dallas Bro'Pitbull</h4>
+        <a href="/event"> <h4>Bark in the Park  |  11/06/17  |  Hosted by: Dallas Bro'Pitbull</h4></a>
     </div>;
 
 export default HistoryOfEvents;

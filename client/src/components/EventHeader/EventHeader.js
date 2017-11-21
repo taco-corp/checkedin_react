@@ -1,7 +1,5 @@
 import React from "react";
-import temp from '../../snippet'
 import "./EventHeader.css";
-import Attendee from '../Attendee'
 
 const EventHeader = () => 
     <div className="thumbnail col-md-8 col-md-offset-2">

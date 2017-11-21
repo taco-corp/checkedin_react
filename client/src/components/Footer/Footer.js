@@ -7,7 +7,7 @@ const Footer = () =>
   </div>;
 
 
-{/* <footer className="footer">
+/* <footer className="footer">
     <div className="container">
         <div className="row">
             <div className="col-md-3">
@@ -20,5 +20,5 @@ const Footer = () =>
             </div>
         </div>
     </div>
-</footer> */}
+</footer> */
 export default Footer;

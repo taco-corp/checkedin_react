@@ -23,8 +23,8 @@ const App = () =>
             <Route exact path="/event/" component={Event} />
             <Route exact path="/home" component={Home} />
             <Route exact path="/newevent" component={Newevent} />
+            <Route exact path="/login" component={Login} />
           </Wrapper>
-          <Route exact path="/login" component={Login} />
       <Footer />
     </div>
   </Router>;

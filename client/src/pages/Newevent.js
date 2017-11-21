@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import NewEvent from "../components/NewEvent";
 
 class Newevent extends Component {
 
@@ -21,7 +22,9 @@ class Newevent extends Component {
                     <input type="text" placeholder="Event Keyword #3" name="keyword3" id="inputKeyword3" className="form-control"/>
                     <input type="text" placeholder="Optional URL to show event attendees." name="hostname" id="inputHost" className="form-control" />
                     {/* <!-- Event Button --> */}
-                    <button type="submit" className="btn btn-primary btn-lg btn-block" id="createEventButton">Create Event</button>
+                    
+                    <NewEvent />
+                    {/* <button type="submit" className="btn btn-primary btn-lg btn-block" id="createEventButton">Create Event</button> */}
 
                 </form>
 

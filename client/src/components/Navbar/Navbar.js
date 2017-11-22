@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import API from "../../utils/API";
-// import "./Navbar.css";
+import "./Navbar.css";
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 class Navbar extends Component {
@@ -43,24 +43,11 @@ class Navbar extends Component {
   <nav className="navbar navbar-default fixed-top navbar-toggleable-md navbar-light bg-faded">
     <div className="container-fluid">
       <div className="navbar-header">
-        <Link className="navbar-brand" to="/login">
-          CheckedIn
-        </Link>
+        <Link className="navbar-brand" to="/">CheckedIn</Link>
       </div>
       <ul className="nav navbar-nav">
-        <li className={
-          window.location.pathname === "/" ||
-          window.location.pathname === "/login" ? "active" : ""}>
-          <Link to="/login">Login</Link>
-        </li>
         <li
-          className={
-            // window.location.pathname === "/" ||
-            window.location.pathname === "/home"
-              ? "active"
-              : ""
-          }
-        >
+          className={window.location.pathname === "/home" ? "active" : ""}>
           <Link to="/home">Home</Link>
         </li>
         <li className={window.location.pathname === "/newevent" ? "active" : ""}>
@@ -71,8 +58,10 @@ class Navbar extends Component {
           <Link to="/event">Event</Link>
         </li>
       </ul>
-      <button className="logout right-nav" onClick={this.logout}>Logout</button>
-      <span className="loggedin-user right-nav">{this.state.loggedInUserName}</span>
+      <ul className="nav navbar-nav navbar-right">
+        <li className="loggedin-user"><span className="glyphicon glyphicon-user"></span> {this.state.loggedInUserName}</li>
+        <li><button className="logout right-nav btn btn-primary btn-sm" onClick={this.logout}>Logout</button></li>
+      </ul>
     </div>
   </nav>
   );

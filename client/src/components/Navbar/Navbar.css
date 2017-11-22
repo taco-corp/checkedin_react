@@ -1,9 +1,13 @@
 nav.navbar.navbar-default {
     margin-bottom: 0;
-    // position: fixed;
     width: 100%;
     z-index: 99;
 }
 .right-nav {
 	float: right;
+}
+
+.loggedin-user {
+    padding-top: 5px;
+    padding-right: 10px;
 }

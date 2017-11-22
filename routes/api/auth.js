@@ -110,8 +110,13 @@ router.route('/loggedinUser')
 // TODO: Need a button on UI hooked to this route
 router.route('/logout')
 .get(function(req, res){
+	debugger;
+	console.log("TRYING TO LOG OUT 1");
     req.logout();
-    res.redirect('https://www.linkedin.com/m/logout');
+    console.log("TRYING TO LOG OUT 2");
+    res.json("loggedout");
+    // res.redirect('https://www.linkedin.com/m/logout');
+    console.log("TRYING TO LOG OUT 3");
 });
 
 

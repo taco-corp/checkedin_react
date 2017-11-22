@@ -98,7 +98,12 @@ router.route('/linkedin/callback')
 // TODO: any client code that needs to get logged-in user's info can use this route
 router.route('/loggedinUser')
 .get(function (req, res) {
-    res.json(req.user);
+    if (req.user === undefined) {
+        res.json(null);
+    }
+    else {
+        res.json(req.user);
+    }
 });
 
 // This is a route to log out of linkedIn.

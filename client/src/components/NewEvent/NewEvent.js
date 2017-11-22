@@ -13,9 +13,9 @@ class NewEvent extends Component {
     render() {
         return (
             <div className="App text-center">
-                <div className="thumbnail col-md-8 col-md-offset-2">
+                <div className="thumbnail col-md-4 col-md-offset-2">
                 <row className="col-md-12">
-                    <div id="createEventBtn" class="container col-md-4 col-md-offset-4">
+                    <div id="createEventBtn" class="container col-md-8 col-md-offset-3">
                     <button class="btn btn-primary btn-lg btn-block" href="/newevent" id="submit2" width="300" onClick={this.handleCreation}>Create New Event</button>
                     </div>
                 </row>

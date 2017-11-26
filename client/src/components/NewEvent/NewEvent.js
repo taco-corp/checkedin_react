@@ -1,29 +1,20 @@
-import React, { Component } from 'react';
-import "./NewEvent.css";
+// import React, { Component } from 'react';
+// import "./NewEvent.css";
+// import Row from "../Row";
 
-// const NewEvent = () => 
+// // var db = require("../../../models");
 
-class NewEvent extends Component {
-    handleCreation = event => {
-        event.preventDefault();
-        console.log("HANDLE CREATION");
-        window.location='http://localhost:8080/api/auth/linkedin';
-    };
-
-    render() {
-        return (
-            <div className="App text-center">
-                <div className="thumbnail col-md-4 col-md-offset-2">
-                <row className="col-md-12">
-                    <div id="createEventBtn" className="container col-md-8 col-md-offset-3">
-                    <button className="btn btn-primary btn-lg btn-block" href="/newevent" id="submit2" width="300" onClick={this.handleCreation}>Create New Event</button>
-                    </div>
-                </row>
-                </div>
-            </div>
-        );
-    }
-}
+// const NewEvent = (props) => 
+//     (<div className="App text-center">
+//         <div className="thumbnail col-md-4 col-md-offset-2">
+//         <Row className="col-md-12">
+//             <div id="createEventBtn" className="container col-md-8 col-md-offset-3">
+//             <button className="btn btn-primary btn-lg btn-block" href="/newevent" id="submit2" width="300" onClick={props.handleCreation}>Create New Event</button>
+//             </div>
+//         </Row>
+//         </div>
+//     </div>
+//     )
 
 
-export default NewEvent;
+// export default NewEvent;

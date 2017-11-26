@@ -7,5 +7,9 @@ export default {
   },
   logout: function() {
   	return axios.get("/api/auth/logout");
-  }
+  },
+  // createEvent: function(event) {
+  //   //console.log("event", event);
+  //   return axios.post("/api/event", event);
+  // }
 };

@@ -14,7 +14,7 @@ class Home extends Component {
        
         <div>
             <Row> 
-                <NewEvent /><SearchEvent />
+                {/* <NewEvent /><SearchEvent /> */}
             </Row>
             <HistoryOfEvents />
             <SavedPeople />

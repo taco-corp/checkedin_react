@@ -8,4 +8,10 @@ const router = require("express").Router();
 const authRoutes = require("./auth");
 router.use("/auth", authRoutes);
 
+const eventRoutes = require("./event");
+router.use("/event", eventRoutes);
+
+const userRoutes = require("./user");
+router.use("/user", userRoutes);
+
 module.exports = router;

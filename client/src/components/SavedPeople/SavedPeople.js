@@ -10,7 +10,7 @@ const SavedPeople = () =>
         </div>
         {
             Object.keys(temp).map((id)=>{
-            console.log(id)
+            // console.log(id)
             return(
                 
                 <div className="col-md-3" key={id}>

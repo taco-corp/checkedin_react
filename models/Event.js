@@ -8,26 +8,26 @@ const eventSchema = new Schema({
       ref: "User"
   },
   location: { type: String, 
-    trim: true,
-    required: "Event Location is Required" 
+    trim: true
+    // required: "Event Location is Required" 
   },
   eventName: { type: String, 
-    trim: true,
-    required: "Event Name is Required" 
+    trim: true
+    // required: "Event Name is Required" 
   },
 // ****Not sure if we're going to use this or not****
 //   sanitizedEventName: { type: String 
 //   },
   description: { type: String,
-    trim: true,
-    required: "Please Enter an Event Description" 
+    trim: true
+    // required: "Please Enter an Event Description" 
   },
   keywordOne: { type: String, 
-    trim: true,
-    required: "You Must Enter at Least One Keyword" 
+    trim: true
+    // required: "You Must Enter at Least One Keyword" 
   },
   keywordTwo: { type: String,
-    trim: true,
+    trim: true
   },
   keywordThree: { type: String,
     trim: true 
@@ -39,7 +39,6 @@ const eventSchema = new Schema({
     type: Date,
         default: Date.now 
   },
-  // Need to check if this will allow us to populate multiple event guests 
   attendees: [
     {
       type: Schema.Types.ObjectId,

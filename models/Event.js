@@ -15,6 +15,10 @@ const eventSchema = new Schema({
     trim: true,
     required: "Event Name is Required" 
   },
+  eventDate: { 
+    type: Date,
+    trim: true
+  },
 // ****Not sure if we're going to use this or not****
 //   sanitizedEventName: { type: String 
 //   },

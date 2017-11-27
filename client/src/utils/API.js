@@ -9,7 +9,7 @@ export default {
   	return axios.get("/api/auth/logout");
   },
   // getEventsCurrentUser: function() {
-  // 	return axios.get("/api/auth/loggedinUser")  
+  // 	axios.get("/api/auth/loggedinUser")  
   // 	  .then(function (response) {
   //   	var linkedInId = (response && response.data && response.data.id) ? response.data.id : "";
 	 //    console.log(`responseData:...... ${JSON.stringify(linkedInId)}`);
@@ -17,8 +17,8 @@ export default {
 	 //  .catch(function (error) {
 	 //    console.log(error);
 	 //  });
-  // },
-  getAllUserInfo: function() {
-  	return axios.get("api/user/all");
+  // }
+  getAllEvents: function() {
+  	return axios.get("/api/events");
   }
 };

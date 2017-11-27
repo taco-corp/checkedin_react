@@ -9,7 +9,7 @@ router.route("/")
 
 // Matches with "/api/users/:id"
 router
-  .route("/:id")
+  .route("/id/:id")
   .get(eventsController.findById)
   .put(eventsController.update)
   .delete(eventsController.remove);

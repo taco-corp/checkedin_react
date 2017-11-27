@@ -6,9 +6,9 @@ const router = require("express").Router();
 // This was giving an error so I commented it out-Steve
 // router.use("/main", mainRoutes);
 const authRoutes = require("./auth");
-const userRoutes = require("./user");
+const usersRoutes = require("./users");
 
 router.use("/auth", authRoutes);
-router.use("/user", userRoutes);
+router.use("/users", usersRoutes);
 
 module.exports = router;

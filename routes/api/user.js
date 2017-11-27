@@ -16,7 +16,7 @@ router
 
 
 router
-  .route("/api/users")
+  .route("/api/user")
   .get(userController.findAll);
 
 

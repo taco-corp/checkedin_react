@@ -19,16 +19,5 @@ router
   .route("/api/users")
   .get(usersController.findAll);
 
-
-
-
-
-  // app.get("/api/users", function(req, res) {
-  // 	db.User.findAll({})
-  // 	.then(function(dbUser){
-  // 	res.json(dbUser);
-  // 	});    
-  // });
-
 module.exports = router;
 

@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const eventSchema = new Schema({
   // update hostName to use the info from linkedin if possible
-  host: {
+  hostUser: {
       type: Schema.Types.ObjectId,
       ref: "User"
   },

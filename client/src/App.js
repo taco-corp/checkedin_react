@@ -15,43 +15,63 @@ class App extends Component {
         isLoggedIn: false
     };
 
-    render() {
-        API.getUserInfo()
-        .then(res => {
-                    if (res && res.data && res.data.displayName !== null)
-                        this.setState({isLoggedIn: true});
-                    else
-                        this.setState({isLoggedIn: false});
-                }
-        )
-        .catch(err => console.log(err));
+    // render() {
+    //     API.getUserInfo()
+    //     .then(res => {
+    //                 if (res && res.data && res.data.displayName !== null)
+    //                     this.setState({isLoggedIn: true});
+    //                 else
+    //                     this.setState({isLoggedIn: false});
+    //             }
+    //     )
+    //     .catch(err => console.log(err));
 
-        if (this.state.isLoggedIn === false) {
-            return (
-                    <div>
-                        <Logo/>
-                        <Login/>
-                        <Footer/>
-                    </div>
-            );
-        } else {
-            return (
-                    <Router>
-                        <div>
-                            <Navbar/>
-                            <Logo/>
-                            <Wrapper>
-                                <Route exact path="/" component={Home}/>
-                                <Route exact path="/home" component={Home}/>
-                                <Route exact path="/event/" component={Event}/>
-                                <Route exact path="/newevent" component={Newevent}/>
-                            </Wrapper>
-                            <Footer/>
-                        </div>
-                    </Router>
-            );
-        }
+    //     if (this.state.isLoggedIn === false) {
+    //         return (
+    //                 <div>
+    //                     <Logo/>
+    //                     <Login/>
+    //                     <Footer/>
+    //                 </div>
+    //         );
+    //     } else {
+    //         return (
+    //                 <Router>
+    //                     <div>
+    //                         <Navbar/>
+    //                         <Logo/>
+    //                         <Wrapper>
+    //                             <Route exact path="/" component={Home}/>
+    //                             <Route exact path="/home" component={Home}/>
+    //                             <Route exact path="/event/" component={Event}/>
+    //                             <Route exact path="/newevent" component={Newevent}/>
+    //                         </Wrapper>
+    //                         <Footer/>
+    //                     </div>
+    //                 </Router>
+    //         );
+    //     }
+    // }
+
+    render() {
+        return (
+            <Router>
+                <div>
+                    <Navbar/>
+                    <Logo/>
+                    <Wrapper>
+                        <Route exact path="/" component={Home}/>
+                        <Route exact path="/home" component={Home}/>
+                        <Route exact path="/event/" component={Event}/>
+                        <Route exact path="/newevent" component={Newevent}/>
+                    </Wrapper>
+                    <Footer/>
+                </div>
+            </Router>
+        );
+        
     }
+
 }
 
 export default App;

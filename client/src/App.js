@@ -14,7 +14,7 @@ class App extends Component {
     state = {
         isLoggedIn: false
     };
-
+    //Comment this code in to turn on the login function
     // render() {
     //     API.getUserInfo()
     //     .then(res => {
@@ -53,6 +53,7 @@ class App extends Component {
     //     }
     // }
 
+    //Comment this code in turn off the login function
     render() {
         return (
             <Router>

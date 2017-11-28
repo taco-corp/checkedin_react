@@ -42,8 +42,9 @@ mongoose.connect(
 );
 
 // Add data to Mongo DB: .....
-//db.User.create({"_id":"33333596e85f07235822f6dc","email":"dude@yahoo.edu","linkedinId":"AAAAAA4geP","firstName":"Joe","lastName":"Smith","profileURL":"https://www.linkedin.com/in/joesmith","picture":"http://via.placeholder.com/80x80","__v":0,"savedUsers":[]});
-//db.Event.create({_id:"222222244444444444444444", hostUser: "33333596e85f07235822f6dc", location: "Durham, NC building", eventName: "Programmer's Story", eventDate:"2017/12/08", eventTime:"20:00", description: "Learn about this programmer's experiences.", keywords: "programmer"});
+// db.User.create({"_id":"33333596e85f07235822f6dc","email":"dude@yahoo.edu","linkedinId":"AAAAAA4geP","firstName":"Joe","lastName":"Smith","profileURL":"https://www.linkedin.com/in/joesmith","picture":"http://via.placeholder.com/80x80","__v":0,"savedUsers":[]});
+// db.Event.create({_id:"222222244444444444444444", hostUser: "33333596e85f07235822f6dc", location: "Durham, NC building", eventName: "Programmer's Story", eventDate:"2017/12/08", eventTime:"20:00", description: "Learn about this programmer's experiences.", keywords: "programmer"});
+// db.Event.create({_id:"333333333335555555555555", hostUser: "33333596e85f07235822f6dc", location: "Coffee Shop", eventName: "Code and Coffee", eventDate:"2018/01/07", eventTime:"20:00", description: "Meet other programmers and work on projects together.", keywords: "meetup", attendees: ["kiglaze", "zdayar", "dude"]});
 
 // Start the API server
 app.listen(PORT, function() {

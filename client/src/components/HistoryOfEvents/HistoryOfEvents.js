@@ -10,21 +10,28 @@ class HistoryOfEvents extends Component {
   state = {
   	eventsHosted: [],
     eventsAttended: [],
-    eventsResJson: ""
+    eventsHostedResJson: "",
+    eventsAttendedResJson: ""
   };
 
   // When the component mounts
   componentDidMount() {
-  	this.loadEvents();
+  	this.loadHostedEvents();
+  	this.loadAttendedEvents();
   }
 
-loadEvents = () => {
-	API.getAllEvents().then(res => {
-		this.setState({eventsResJson: JSON.stringify(res.data)});
+loadHostedEvents = () => {
+	API.getEventsHostedByCurrentUser().then(res => {
+		this.setState({eventsHostedResJson: JSON.stringify(res)});
 		this.setState({eventsHosted: res.data});
+	});
+}
+loadAttendedEvents = () => {
+	API.getEventsAttendedByCurrentUser().then(res => {
+		this.setState({eventsAttendedResJson: JSON.stringify(res)});
 		this.setState({eventsAttended: res.data});
 	});
-};
+}
 
 render() {
 	return (
@@ -32,7 +39,8 @@ render() {
         <div className="thumbnail text-center">
         <h3>My Events</h3>
         </div>
-        <p>{this.state.eventsResJson}</p>
+        <p>{this.state.eventsHostedResJson}</p>
+        <p>{this.state.eventsAttendedResJson}</p>
         <a href="/event"> <h4>Bark in the Park  |  11/06/17  |  Hosted by: Dallas Bro'Pitbull</h4></a>
             <h4>Hosted</h4>
             <List>

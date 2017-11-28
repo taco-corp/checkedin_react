@@ -20,5 +20,9 @@ router
 .route("/name/:searchTerm")
 .get(eventsController.findByName);
 
+router
+.route("/event/:eventName")
+.get(eventsController.findEvent)
+
 module.exports = router;
 

@@ -16,6 +16,12 @@ module.exports = {
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },
+    findEvent: function(req, res) {
+        db.Event
+        .find({eventName: req.params.eventName})
+        .populate("User")
+        .then();
+	},
     findByName: function (req, res) {
         // find events whose name is LIKE req.params.name
         db.Event

@@ -7,11 +7,15 @@ class EventHeader extends Component {
         // console.log("HANDLE LOGIN....");
         window.location='http://localhost:8080/api/auth/linkedin';
     };
+
   
     render() {
+
+      var eventName = 'Bark in the Park';
+
       return (
         <div className="thumbnail center-text col-md-6 col-md-offset-3">
-             <h2 id="eventTitle" className="text-center">Event Name Here!</h2>
+             <h2 id="eventTitle" className="text-center">{eventName}</h2>
               <div className="col-md-6 col-md-offset-3">
           <button className="btn btn-primary btn-lg btn-block" id="login" onClick={this.handleLogin}>CheckIn with LinkedIn</button>
           </div>

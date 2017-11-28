@@ -15,7 +15,7 @@ class Login extends Component {
 		    <div className="col-md-6 col-md-offset-3">
         <button className="btn btn-primary btn-lg btn-block" id="login" onClick={this.handleLogin}>Login</button>
         </div>
-    </div>
+      </div>
     );
   }
 }

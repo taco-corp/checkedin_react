@@ -7,5 +7,18 @@ export default {
   },
   logout: function() {
   	return axios.get("/api/auth/logout");
+  },
+  // getEventsCurrentUser: function() {
+  // 	axios.get("/api/auth/loggedinUser")  
+  // 	  .then(function (response) {
+  //   	var linkedInId = (response && response.data && response.data.id) ? response.data.id : "";
+	 //    console.log(`responseData:...... ${JSON.stringify(linkedInId)}`);
+	 //  })
+	 //  .catch(function (error) {
+	 //    console.log(error);
+	 //  });
+  // }
+  getAllEvents: function() {
+  	return axios.get("/api/events");
   }
 };

@@ -4,10 +4,9 @@ import "./NewEvent.css";
 // const NewEvent = () => 
 
 class NewEvent extends Component {
-    handleCreation = event => {
+    redirectToEventCreation= event => {
         event.preventDefault();
-        console.log("HANDLE CREATION");
-        window.location='http://localhost:8080/api/auth/linkedin';
+        window.location='/newevent';
     };
 
     render() {
@@ -16,7 +15,8 @@ class NewEvent extends Component {
                 <div className="thumbnail col-md-4 col-md-offset-2">
                 <row className="col-md-12">
                     <div id="createEventBtn" class="container col-md-8 col-md-offset-3">
-                    <button class="btn btn-primary btn-lg btn-block" href="/newevent" id="submit2" width="300" onClick={this.handleCreation}>Create New Event</button>
+                    <button className="btn btn-primary btn-block" id="createEvent"
+                            onClick={this.redirectToEventCreation}>Create New Event</button>
                     </div>
                 </row>
                 </div>

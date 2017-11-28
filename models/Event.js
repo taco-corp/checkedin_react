@@ -10,7 +10,8 @@ const eventSchema = new Schema({
     eventName: {
         type: String,
         trim: true,
-        required: "Event Name is Required"
+        required: "Event Name is Required",
+        unique: true
     },
     location: {
         type: String,

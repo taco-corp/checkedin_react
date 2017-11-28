@@ -14,63 +14,49 @@ class App extends Component {
     state = {
         isLoggedIn: false
     };
-    //Comment this code in to turn on the login function
-    // render() {
-    //     API.getUserInfo()
-    //     .then(res => {
-    //                 if (res && res.data && res.data.displayName !== null)
-    //                     this.setState({isLoggedIn: true});
-    //                 else
-    //                     this.setState({isLoggedIn: false});
-    //             }
-    //     )
-    //     .catch(err => console.log(err));
 
-    //     if (this.state.isLoggedIn === false) {
-    //         return (
-    //                 <div>
-    //                     <Logo/>
-    //                     <Login/>
-    //                     <Footer/>
-    //                 </div>
-    //         );
-    //     } else {
-    //         return (
-    //                 <Router>
-    //                     <div>
-    //                         <Navbar/>
-    //                         <Logo/>
-    //                         <Wrapper>
-    //                             <Route exact path="/" component={Home}/>
-    //                             <Route exact path="/home" component={Home}/>
-    //                             <Route exact path="/event/" component={Event}/>
-    //                             <Route exact path="/newevent" component={Newevent}/>
-    //                         </Wrapper>
-    //                         <Footer/>
-    //                     </div>
-    //                 </Router>
-    //         );
-    //     }
-    // }
+    componentDidMount() {
+        API.getUserInfo()
+        .then(res => {
+                    if (res && res.data && res.data.displayName !== null)
+                        this.setState({isLoggedIn: true});
+                    else
+                    // *****************************************************
+                    // JON - change the false to true in the next line if
+                    //       you want to disable the login function
+                    // *****************************************************
+                        this.setState({isLoggedIn: false});
+                }
+        )
+        .catch(err => console.log(err));
+    }
 
-    //Comment this code in turn off the login function
     render() {
-        return (
-            <Router>
-                <div>
-                    <Navbar/>
-                    <Logo/>
-                    <Wrapper>
-                        <Route exact path="/" component={Home}/>
-                        <Route exact path="/home" component={Home}/>
-                        <Route exact path="/event/" component={Event}/>
-                        <Route exact path="/newevent" component={Newevent}/>
-                    </Wrapper>
-                    <Footer/>
-                </div>
-            </Router>
-        );
-        
+        if (this.state.isLoggedIn === false) {
+            return (
+                    <div>
+                        <Logo/>
+                        <Login/>
+                        <Footer/>
+                    </div>
+            );
+        } else {
+            return (
+                    <Router>
+                        <div>
+                            <Navbar/>
+                            <Logo/>
+                            <Wrapper>
+                                <Route exact path="/" component={Home}/>
+                                <Route exact path="/home" component={Home}/>
+                                <Route exact path="/event/" component={Event}/>
+                                <Route exact path="/newevent" component={Newevent}/>
+                            </Wrapper>
+                            <Footer/>
+                        </div>
+                    </Router>
+            );
+        }
     }
 
 }

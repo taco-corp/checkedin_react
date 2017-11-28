@@ -20,5 +20,11 @@ export default {
   // }
   getAllEvents: function() {
   	return axios.get("/api/events");
+  },
+
+
+  createEvent: function(event) {
+      console.log("event", event);
+      return axios.post("/api/events", event);
   }
 };

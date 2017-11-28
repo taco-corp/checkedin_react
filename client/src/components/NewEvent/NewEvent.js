@@ -16,7 +16,7 @@ class NewEvent extends Component {
                 <div className="thumbnail col-md-4 col-md-offset-2">
                 <row className="col-md-12">
                     <div id="createEventBtn" class="container col-md-8 col-md-offset-3">
-                    <button class="btn btn-primary btn-lg btn-block" href="/newevent" id="submit2" width="300" onClick={this.handleCreation}>Create New Event</button>
+                    <a class="btn btn-primary btn-lg btn-block" href="/newevent" id="submit2" width="300" onClick={this.handleCreation}>Create New Event</a>
                     </div>
                 </row>
                 </div>

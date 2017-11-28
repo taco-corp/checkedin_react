@@ -26,5 +26,12 @@ export default {
   createEvent: function(event) {
       console.log("event", event);
       return axios.post("/api/events", event);
+  },
+
+  searchEvent: function(searchTerm) {
+      // Search for events whose name is LIKE the search term
+      console.log("search term", searchTerm);
+      return axios.get("/api/events/name/" + searchTerm);
   }
+
 };

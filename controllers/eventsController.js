@@ -16,6 +16,13 @@ module.exports = {
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },
+    findByName: function (req, res) {
+        // find events whose name is LIKE req.params.name
+        db.Event
+        .find({eventName: new RegExp('.*' + req.params.searchTerm + '.*', "i")})
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
+    },
     create: function (req, res) {
         // host of the event will be set to currently logged in user
         db.User

@@ -25,5 +25,9 @@ router
 .route("/name/:eventName")
 .get(eventsController.findEvent)
 
+router
+.route("/api/event/addAttendee")
+.put(eventsController.addAttendee)
+
 module.exports = router;
 

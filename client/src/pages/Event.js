@@ -12,7 +12,9 @@ class Event extends Component {
     eventId: '',
     location: '',
     time: '',
-    description: ''
+    description: '',
+    eventURL: '',
+    eventHost: ''
 
   };
   
@@ -26,7 +28,9 @@ class Event extends Component {
         eventId:res.data["0"]._id, 
         location: res.data["0"].location,
         time: res.data["0"].eventTime,
-        description: res.data["0"].description 
+        description: res.data["0"].description, 
+        eventURL: res.data["0"].eventURL,
+        eventHost: res.data["0"].hostUser
       })
     });
     //.data["0"].eventName
@@ -48,7 +52,7 @@ class Event extends Component {
       <div className="App">
         <EventHeader event={this.state.eventName} eventId={this.state.eventId} />
         <EventGuests />
-        <EventInfo location={this.state.location} time={this.state.time} description={this.state.description}/>
+        <EventInfo eventHost={this.state.eventHost} location={this.state.location} time={this.state.time} description={this.state.description} eventURL={this.state.eventURL}/>
       </div>
     );
   }

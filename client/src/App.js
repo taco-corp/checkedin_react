@@ -18,7 +18,7 @@ class App extends Component {
     componentDidMount() {
         API.getUserInfo()
         .then(res => {
-            console.log("Response Data", res.data);
+            //console.log("Response Data", res.data);
             localStorage.setItem("id", res.data.id);
             localStorage.setItem("displayName", res.data.displayName);
             localStorage.setItem("picture", res.data._json.pictureUrl); 

@@ -65,5 +65,15 @@ module.exports = {
         .then(dbModel => dbModel.remove())
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
+    },
+    //This function needs work to update the event attendee array
+    addAttendee: function (req, res){
+        db.Event
+        .findByIdAndUpdate(
+            res.id,
+            {$push: {'attendees': {res}}},
+            {safe:true, upsert: true, new: true})
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
     }
 };

@@ -18,8 +18,10 @@ class App extends Component {
     componentDidMount() {
         API.getUserInfo()
         .then(res => {
-            console.log(res.data);
+            console.log("Response Data", res.data);
             localStorage.setItem("id", res.data.id);
+            localStorage.setItem("displayName", res.data.displayName);
+            
                     if (res && res.data && res.data.displayName !== null)
                         this.setState({isLoggedIn: true});
                     else

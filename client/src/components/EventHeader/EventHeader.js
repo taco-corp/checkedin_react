@@ -8,20 +8,38 @@ class EventHeader extends Component {
     super(props)
   }
 
-    handleLogin = event => {
-        event.preventDefault();
-        let userId = localStorage.getItem("id")
-        API.addUserToEvent(userId, this.props.eventId)
-      
-        // console.log("HANDLE LOGIN....");
-        window.location='http://localhost:8080/api/auth/linkedin';
+    // handleCheckin = event =>{
+    //   event.preventDefault();
+    //   let checkinObject = {
+    //     displayName: localStorage.getItem('displayName'),
+    //     id: localStorage.getItem('id'),
+    //     picture: localStorage.getItem('picture'),
+    //     profileURL: localStorage.getItem('profileURL')
+    //   }
+    //   API.addUserToEvent(checkinObject, this.props.userObject)
+    // };
+  
+        //Removed from handleLogin function
+        //let userId = localStorage.getItem("id")
+        //API.addUserToEvent(userId, this.props.eventId)
+
+    handleCheckin = event => {
+      event.preventDefault();
+      let checkinObject = {
+        displayName: localStorage.getItem('displayName'),
+        id: localStorage.getItem('id'),
+        picture: localStorage.getItem('picture'),
+        profileURL: localStorage.getItem('profileURL')
+      }
+      API.addUserToEvent(checkinObject, this.props.userObject)
+      // The following line adds the checkin user to the users collection if they don't already exist
+      window.location='http://localhost:8080/api/auth/linkedin';
     };
 
   
     render() {
       console.log("event header props" , this.props)
-//We need the eventName to be dynamic and dependant upong the URL
-
+      //We need the eventName to be dynamic and dependant upong the URL
       // var eventName = 'http://localhost:3000/event/:eventName';
       //var eventName = req.params.eventName
       //var eventName = 'Bark in the Park';
@@ -30,7 +48,7 @@ class EventHeader extends Component {
         <div className="thumbnail center-text col-md-6 col-md-offset-3">
              <h2 id="eventTitle" className="text-center">{this.props.event}</h2>
               <div className="col-md-6 col-md-offset-3">
-          <button className="btn btn-primary btn-lg btn-block" id="login" onClick={this.handleLogin}>CheckIn with LinkedIn</button>
+          <button className="btn btn-primary btn-lg btn-block" id="login" onClick={this.handleCheckin}>CheckIn with LinkedIn</button>
           </div>
         </div>
       );

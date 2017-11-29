@@ -26,7 +26,7 @@ class App extends Component {
                         this.setState({isLoggedIn: true});
                     else
                     // *****************************************************
-                    // JON - change the false to true in the next line if
+                    //    change the false to true in the next line if
                     //       you want to disable the login function
                     // *****************************************************
                         this.setState({isLoggedIn: false});

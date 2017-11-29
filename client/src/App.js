@@ -15,17 +15,30 @@ class App extends Component {
         isLoggedIn: false
     };
 
-    render() {
+    componentDidMount() {
         API.getUserInfo()
         .then(res => {
+            //console.log("Response Data", res.data);
+            localStorage.setItem("id", res.data.id);
+            localStorage.setItem("displayName", res.data.displayName);
+            localStorage.setItem("picture", res.data._json.pictureUrl); 
+            localStorage.setItem("profileURL", res.data._json.publicProfileUrl);
+            
+            
                     if (res && res.data && res.data.displayName !== null)
                         this.setState({isLoggedIn: true});
                     else
+                    // *****************************************************
+                    //    change the false to true in the next line if
+                    //       you want to disable the login function
+                    // *****************************************************
                         this.setState({isLoggedIn: false});
                 }
         )
         .catch(err => console.log(err));
+    }
 
+    render() {
         if (this.state.isLoggedIn === false) {
             return (
                     <div>
@@ -43,7 +56,7 @@ class App extends Component {
                             <Wrapper>
                                 <Route exact path="/" component={Home}/>
                                 <Route exact path="/home" component={Home}/>
-                                <Route exact path="/event/" component={Event}/>
+                                <Route exact path="/event/:eventName" component={Event}/>
                                 <Route exact path="/newevent" component={Newevent}/>
                             </Wrapper>
                             <Footer/>
@@ -52,6 +65,7 @@ class App extends Component {
             );
         }
     }
+
 }
 
 export default App;

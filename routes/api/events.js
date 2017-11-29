@@ -1,23 +1,33 @@
 const router = require("express").Router();
 const eventsController = require("../../controllers/eventsController");
-// const eventController = require("../../controllers/eventController");
 
-// Matches with "/api/users"
+// Matches with "/api/events"
 router.route("/")
-  .get(eventsController.findAll)
-  .post(eventsController.create);
+.get(eventsController.findAll)
+.post(eventsController.create);
 
-// Matches with "/api/users/:id"
+// Matches with "/api/events/:id"
 router
-  .route("/id/:id")
-  .get(eventsController.findById)
-  .put(eventsController.update)
-  .delete(eventsController.remove);
+.route("/:id")
+.get(eventsController.findById)
+.put(eventsController.update)
+.delete(eventsController.remove);
 
+
+// Matches with "/api/events/name/:name"
+// This will find all events whose name is LIKE "name"
+router
+.route("/name/:searchTerm")
+.get(eventsController.findByName);
+
+//http://localhost:8080/api/events/name/demoevent3
+router
+.route("/name/:eventName")
+.get(eventsController.findEvent)
 
 router
-  .route("/api/events")
-  .get(eventsController.findAll);
+.route("/api/event/addAttendee")
+.put(eventsController.addAttendee)
 
 module.exports = router;
 

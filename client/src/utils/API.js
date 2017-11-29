@@ -36,5 +36,31 @@ export default {
       var linkedinUrlPart="kiglaze";
       return axios.get(`/api/events?attendees=${linkedinUrlPart}`);
       // return axios.get(`/api/events`);
+  },
+
+  getEventByName: function(eventName) {
+    console.log("I am here")
+    console.log(eventName)
+    return axios.get("/api/events/name/" + eventName)
+     /*Get the data, make api get call, search all return object */
+  },
+
+  createEvent: function(event) {
+      console.log("event", event);
+      return axios.post("/api/events", event);
+  },
+
+  addUserToEvent: function(userObject){
+    console.log("userObject");
+    console.log(userObject);
+    //debugger
+    return axios.post("/api/event/addAttendee", userObject)
+  },
+
+  searchEvent: function(searchTerm) {
+      // Search for events whose name is LIKE the search term
+      console.log("search term", searchTerm);
+      return axios.get("/api/events/name/" + searchTerm);
   }
+
 };

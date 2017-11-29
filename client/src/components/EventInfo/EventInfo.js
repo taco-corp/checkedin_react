@@ -15,13 +15,15 @@ class EventInfo extends Component {
                     <div>
                     <h3>
                     <u>Event Host:</u> <br/>
-                    {this.props.host}<br/>
+                    {this.props.eventHost}<br/>
                     <u>Event Location:</u> <br/>
                     {this.props.location}<br/>
                     <u>Event Time:</u> <br/>
                     {this.props.time}<br/>
                     <u>Event Description:</u> <br/>
                     {this.props.description}<br/>
+                    <u>Event Url</u><br/>
+                    {this.props.eventURL}<br/>
                     </h3>
                     </div>
                 </div>  

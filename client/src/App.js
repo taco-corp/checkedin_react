@@ -18,6 +18,8 @@ class App extends Component {
     componentDidMount() {
         API.getUserInfo()
         .then(res => {
+            console.log(res.data);
+            localStorage.setItem("id", res.data.id);
                     if (res && res.data && res.data.displayName !== null)
                         this.setState({isLoggedIn: true});
                     else
@@ -49,7 +51,7 @@ class App extends Component {
                             <Wrapper>
                                 <Route exact path="/" component={Home}/>
                                 <Route exact path="/home" component={Home}/>
-                                <Route exact path="/event/" component={Event}/>
+                                <Route exact path="/event/:eventName" component={Event}/>
                                 <Route exact path="/newevent" component={Newevent}/>
                             </Wrapper>
                             <Footer/>

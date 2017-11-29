@@ -20,5 +20,10 @@ router
 .route("/name/:searchTerm")
 .get(eventsController.findByName);
 
+//http://localhost:8080/api/events/name/demoevent3
+router
+.route("/name/:eventName")
+.get(eventsController.findEvent)
+
 module.exports = router;
 

@@ -21,6 +21,9 @@ class App extends Component {
             console.log("Response Data", res.data);
             localStorage.setItem("id", res.data.id);
             localStorage.setItem("displayName", res.data.displayName);
+            localStorage.setItem("picture", res.data._json.pictureUrl); 
+            localStorage.setItem("profileURL", res.data._json.publicProfileUrl);
+            
             
                     if (res && res.data && res.data.displayName !== null)
                         this.setState({isLoggedIn: true});

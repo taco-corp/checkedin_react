@@ -22,10 +22,23 @@ export default {
   	return axios.get("/api/events");
   },
 
+  getEventByName: function(eventName) {
+    console.log("I am here")
+    console.log(eventName)
+    return axios.get("/api/events/name/" + eventName)
+     /*Get the data, make api get call, search all return object */
+  },
 
   createEvent: function(event) {
       console.log("event", event);
       return axios.post("/api/events", event);
+  },
+
+  addUserToEvent: function(user, eventId){
+    console.log("user & event ID");
+    console.log(user, eventId);
+    debugger
+    //return axios.post("", user, eventId)
   },
 
   searchEvent: function(searchTerm) {

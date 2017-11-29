@@ -21,18 +21,18 @@ export default {
   getAllEvents: function() {
   	return axios.get("/api/events");
   },
-  getEventsHostedByCurrentUser: function() {
+  getEventsHostedByCurrentUser: function (hostLinkedinId) {
     // // axios.get("/api/auth/loggedinUser")
     // //   .then(function(response) {
     // //     var linkedinId="IJngCO4geP";
     // //     return axios.get(`/api/users?linkedinId=${linkedinId}`);
     // //   });
-      var hostLinkedinId="33333596e85f07235822f6dc";
+     // var hostLinkedinId="33333596e85f07235822f6dc";
       return axios.get(`/api/events?hostUser=${hostLinkedinId}`);
       // return axios.get(`/api/events`);
 
   },
-  getEventsAttendedByCurrentUser: function() {
+  getEventsAttendedByCurrentUser: function (linkedinUrlPart) {
       var linkedinUrlPart="kiglaze";
       return axios.get(`/api/events?attendees=${linkedinUrlPart}`);
       // return axios.get(`/api/events`);

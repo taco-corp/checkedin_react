@@ -11,34 +11,52 @@ class HistoryOfEvents extends Component {
   	eventsHosted: [],
     eventsAttended: [],
     eventsHostedResJson: "",
-    eventsAttendedResJson: ""
+    eventsAttendedResJson: "",
+    loggedInUserLinkedinId: "",
+    loggedInUserProfileUrl: ""
   };
 
   // When the component mounts
   componentDidMount() {
-  	this.loadHostedEvents();
+    this.getUserInfo();
+    this.loadHostedEvents();
   	this.loadAttendedEvents();
   }
 
 loadHostedEvents = () => {
-	API.getEventsHostedByCurrentUser().then(res => {
+    API.getEventsHostedByCurrentUser(this.state.loggedInUserLinkedinId).then(res => {
+        debugger;
 		this.setState({eventsHostedResJson: JSON.stringify(res)});
 		this.setState({eventsHosted: res.data});
 	});
 }
 loadAttendedEvents = () => {
-	API.getEventsAttendedByCurrentUser().then(res => {
+    API.getEventsAttendedByCurrentUser(this.state.loggedInUserProfileUrl).then(res => {
 		this.setState({eventsAttendedResJson: JSON.stringify(res)});
 		this.setState({eventsAttended: res.data});
 	});
 }
+getUserInfo = () => {
+    API.getUserInfo()
+        .then(res => {
+            var linkedinId = (res && res.data && res.data.id) ? res.data.id : "";
+            var profileUrl = (res && res.data && res.data._json) ? res.data._json.publicProfileUrl : "";
+            var profileUrlPart = (profileUrl) ? profileUrl.split('/').pop() : "";
 
+            this.setState({ loggedInUserLinkedinId: linkedinId });
+            this.setState({ loggedInUserProfileUrl: profileUrlPart });
+        }
+        )
+        .catch(err => console.log(err));
+}
 render() {
 	return (
     <div className="col-md-5 col-md-offset-2 bottom thumbnail text-center">
         <div className="thumbnail text-center">
         <h3>My Events</h3>
         </div>
+        <p>{this.state.loggedInUserLinkedinId}</p>
+        <p>{this.state.loggedInUserProfileUrl}</p>
         <p>{this.state.eventsHostedResJson}</p>
         <p>{this.state.eventsAttendedResJson}</p>
         <a href="/event"> <h4>Bark in the Park  |  11/06/17  |  Hosted by: Dallas Bro'Pitbull</h4></a>

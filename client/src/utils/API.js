@@ -34,11 +34,11 @@ export default {
       return axios.post("/api/events", event);
   },
 
-  addUserToEvent: function(user, userObject){
-    console.log("user & userObject");
-    console.log(user, userObject);
+  addUserToEvent: function(userObject){
+    console.log("userObject");
+    console.log(userObject);
     //debugger
-    return axios.post("/api/event/addAttendee", user, userObject)
+    return axios.post("/api/event/addAttendee", userObject)
   },
 
   searchEvent: function(searchTerm) {

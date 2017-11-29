@@ -68,11 +68,12 @@ module.exports = {
     },
     //This function needs work to update the event attendee array
     addAttendee: function (req, res){
+        //let reqbody = req.body;
         db.Event
         .findByIdAndUpdate(
-            res.id,
-            {$push: {'attendees': {res}}},
-            {safe:true, upsert: true, new: true})
+            req.body.eventId, 
+            {$push: {'attendees': req.body}})
+           // {safe:true, upsert: true, new: true})
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     }

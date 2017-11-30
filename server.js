@@ -46,6 +46,8 @@ mongoose.connect(
 // db.Event.create({_id:"222222244444444444444444", hostUser: "33333596e85f07235822f6dc", location: "Durham, NC building", eventName: "Programmer's Story", eventDate:"2017/12/08", eventTime:"20:00", description: "Learn about this programmer's experiences.", keywords: "programmer"});
 // db.Event.create({_id:"333333333335555555555555", hostUser: "33333596e85f07235822f6dc", location: "Coffee Shop", eventName: "Code and Coffee", eventDate:"2018/01/07", eventTime:"20:00", description: "Meet other programmers and work on projects together.", keywords: "meetup", attendees: ["kiglaze", "zdayar", "dude"]});
 
+// db.Event.create({ _id: "22222222222999999995555", hostUser: "5a1ccd5fee8d7027c4c53e63", location: "NCSU Library", eventName: "Hackathon", eventDate: "2018/01/10", eventTime: "18:00", description: "Work on your programming projects together.", keywords: "coding", attendees: ["kiglaze", "zdayar", "joe"] });
+
 // Start the API server
 app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);

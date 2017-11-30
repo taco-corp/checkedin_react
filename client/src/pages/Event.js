@@ -30,7 +30,7 @@ class Event extends Component {
         time: res.data["0"].eventTime,
         description: res.data["0"].description, 
         eventURL: res.data["0"].eventURL,
-        eventHost: res.data["0"].hostUser
+        eventHost: res.data["0"].eventHosts
       })
     });
     //.data["0"].eventName
@@ -51,7 +51,7 @@ class Event extends Component {
       
       <div className="App">
         <EventHeader event={this.state.eventName} eventId={this.state.eventId} />
-        <EventGuests />
+        <EventGuests eventName={this.state.eventName} />
         <EventInfo eventHost={this.state.eventHost} location={this.state.location} time={this.state.time} description={this.state.description} eventURL={this.state.eventURL}/>
       </div>
     );

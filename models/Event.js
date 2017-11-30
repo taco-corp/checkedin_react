@@ -7,6 +7,11 @@ const eventSchema = new Schema({
         ref: "User",
         required: "Host is required"
     },
+    eventHosts: {
+        type: String,
+        trim: true,
+        required: "Host People is Required"
+    },
     eventName: {
         type: String,
         trim: true,
@@ -41,10 +46,7 @@ const eventSchema = new Schema({
         trim: true
     },
     attendees: [
-        {
-            type: String,
-            trim: true
-        }
+        { }
     ]
 
 });

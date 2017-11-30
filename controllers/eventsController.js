@@ -39,6 +39,7 @@ module.exports = {
             db.Event
             .create({
                 hostUser: user._id,
+                eventHosts: req.body.eventHosts,
                 eventName: req.body.eventName,
                 location: req.body.location,
                 eventDate: req.body.date,
@@ -66,9 +67,9 @@ module.exports = {
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },
-    //This function needs work to update the event attendee array
+    //This function adds an attendee to an event when the check in button is clicked
     addAttendee: function (req, res){
-        //let reqbody = req.body;
+        //console.log("Add attendee");
         db.Event
         .findByIdAndUpdate(
             req.body.eventId, 

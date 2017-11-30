@@ -25,19 +25,24 @@ class Newevent extends Component {
     handleCreation = event => {
         event.preventDefault();
         console.log("this.state", this.state);
-        API.createEvent(this.state);
+        API.createEvent(this.state)
+        .then(res => {
+            console.log("HANDLED CREATION");
 
-        console.log("HANDLED CREATION");
-        // clear all input fields
-        this.setState({
-            eventName: '',
-            location: '',
-            eventHosts: '',
-            date: '',
-            time: '',
-            description: '',
-            keywords: '',
-            eventURL: ''
+            // redirect user to the specific event's page
+            window.location = "/event/" + this.state.eventName;
+
+            // clear all input fields
+            this.setState({
+                eventName: '',
+                location: '',
+                eventHosts: '',
+                date: '',
+                time: '',
+                description: '',
+                keywords: '',
+                eventURL: ''
+            });
         });
     };
 
@@ -55,7 +60,7 @@ class Newevent extends Component {
                             <input type="text" value={this.state.eventHosts} onChange={this.handleInputChange}
                                    placeholder="Event Host(s) (required)" name="eventHosts" id="inputHosts"
                                    className="form-control" required/>
-                            
+
                             <input type="text" value={this.state.location} onChange={this.handleInputChange}
                                    placeholder="Event Location (required)" name="location" id="inputLocation"
                                    className="form-control" required/>

@@ -39,6 +39,7 @@ module.exports = {
             db.Event
             .create({
                 hostUser: user._id,
+                eventHosts: req.body.eventHosts,
                 eventName: req.body.eventName,
                 location: req.body.location,
                 eventDate: req.body.date,

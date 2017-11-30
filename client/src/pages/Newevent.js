@@ -7,6 +7,7 @@ class Newevent extends Component {
     state = {
         eventName: '',
         location: '',
+        eventHosts: '',
         date: '',
         time: '',
         description: '',
@@ -31,6 +32,7 @@ class Newevent extends Component {
         this.setState({
             eventName: '',
             location: '',
+            eventHosts: '',
             date: '',
             time: '',
             description: '',
@@ -50,6 +52,10 @@ class Newevent extends Component {
                                    placeholder="Event Name (required)" name="eventName" id="inputName"
                                    className="form-control" required/>
 
+                            <input type="text" value={this.state.eventHosts} onChange={this.handleInputChange}
+                                   placeholder="Event Host(s) (required)" name="eventHosts" id="inputHosts"
+                                   className="form-control" required/>
+                            
                             <input type="text" value={this.state.location} onChange={this.handleInputChange}
                                    placeholder="Event Location (required)" name="location" id="inputLocation"
                                    className="form-control" required/>

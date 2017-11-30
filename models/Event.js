@@ -41,10 +41,7 @@ const eventSchema = new Schema({
         trim: true
     },
     attendees: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: "User"
-        }
+        { }
     ]
 
 });

@@ -31,10 +31,10 @@ class EventHeader extends Component {
         id: localStorage.getItem('id'),
         picture: localStorage.getItem('picture'),
         profileURL: localStorage.getItem('profileURL')
-      }
-      API.addUserToEvent(checkinObject)
+      };
+      API.addUserToEvent(checkinObject);
       // The following line adds the checkin user to the users collection if they don't already exist
-      window.location='http://localhost:8080/api/auth/linkedin';
+      //window.location='http://localhost:8080/api/auth/linkedin';
     };
 
   

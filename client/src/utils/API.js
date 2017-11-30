@@ -23,8 +23,8 @@ export default {
   },
 
   getEventByName: function(eventName) {
-    console.log("I am here")
-    console.log(eventName)
+    console.log("I am here");
+    console.log(eventName);
     return axios.get("/api/events/name/" + eventName)
      /*Get the data, make api get call, search all return object */
   },
@@ -38,7 +38,7 @@ export default {
     console.log("userObject");
     console.log(userObject);
     //debugger
-    return axios.post("/api/event/addAttendee", userObject)
+    return axios.put("/api/events/addAttendee", userObject);
   },
 
   searchEvent: function(searchTerm) {

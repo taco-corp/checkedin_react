@@ -12,26 +12,27 @@ class HistoryOfEvents extends Component {
     eventsAttended: [],
     eventsHostedResJson: "",
     eventsAttendedResJson: "",
-    loggedInUserLinkedinId: "",
-    loggedInUserProfileUrl: ""
+    loggedInUserId: "",
+    loggedInUserProfileUrl: "",
+    testJson: ""
   };
 
   // When the component mounts
   componentDidMount() {
     this.getUserInfo();
-    this.loadHostedEvents();
-  	this.loadAttendedEvents();
+    this.loadHostedEvents(this.props.currentUserId);
+  	// this.loadAttendedEvents(this.props.currentUserId);
   }
 
-loadHostedEvents = () => {
-    API.getEventsHostedByCurrentUser(this.state.loggedInUserLinkedinId).then(res => {
-        debugger;
-		this.setState({eventsHostedResJson: JSON.stringify(res)});
+loadHostedEvents = (userId) => {
+  API.getEventsHostedByUser(userId).then(res => {
+		// this.setState({eventsHostedResJson: JSON.stringify(res)});
 		this.setState({eventsHosted: res.data});
 	});
 }
-loadAttendedEvents = () => {
-    API.getEventsAttendedByCurrentUser(this.state.loggedInUserProfileUrl).then(res => {
+//TODO fix
+loadAttendedEvents = (userId) => {
+    API.getEventsAttendedByUser(userId).then(res => {
 		this.setState({eventsAttendedResJson: JSON.stringify(res)});
 		this.setState({eventsAttended: res.data});
 	});
@@ -39,26 +40,32 @@ loadAttendedEvents = () => {
 getUserInfo = () => {
     API.getUserInfo()
         .then(res => {
-            var linkedinId = (res && res.data && res.data.id) ? res.data.id : "";
+        	var loggedInUserLinkedinId = (res && res.data && res.data.id) ? res.data.id : "";
             var profileUrl = (res && res.data && res.data._json) ? res.data._json.publicProfileUrl : "";
             var profileUrlPart = (profileUrl) ? profileUrl.split('/').pop() : "";
 
-            this.setState({ loggedInUserLinkedinId: linkedinId });
             this.setState({ loggedInUserProfileUrl: profileUrlPart });
+            // API.getUserIdByLinkedinId(loggedInUserLinkedinId).then((res2) => {
+            // 	this.setState({ testJson: API.getUserIdByLinkedinId(loggedInUserLinkedinId) });
+            // });
+            this.setState({ testJson: API.getUserIdByLinkedinId(loggedInUserLinkedinId) });
         }
         )
         .catch(err => console.log(err));
 }
 render() {
+  if(this.props.currentUserId) {
 	return (
     <div className="col-md-5 col-md-offset-2 bottom thumbnail text-center">
         <div className="thumbnail text-center">
         <h3>My Events</h3>
         </div>
-        <p>{this.state.loggedInUserLinkedinId}</p>
+        <p>{`HAHAHAH: ${this.props.currentUserId}`}</p>
+        <p>{this.state.loggedInUserId}</p>
         <p>{this.state.loggedInUserProfileUrl}</p>
-        <p>{this.state.eventsHostedResJson}</p>
-        <p>{this.state.eventsAttendedResJson}</p>
+        <p>{`eventsHostedResJson:... ${this.state.eventsHostedResJson}`}</p>
+        <p>{`eventsAttendedResJson:... ${this.state.eventsAttendedResJson}`}</p>
+        <p>{`TEST JSON:... ${this.state.testJson}`}</p>
         <a href="/event"> <h4>Bark in the Park  |  11/06/17  |  Hosted by: Dallas Bro'Pitbull</h4></a>
             <h4>Hosted</h4>
             <List>
@@ -86,6 +93,9 @@ render() {
           	</List>
     </div>
     ); 
+  } else {
+    return ("");
+  }
 }
 }
 

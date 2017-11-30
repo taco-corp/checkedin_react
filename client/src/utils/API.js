@@ -8,34 +8,19 @@ export default {
   logout: function() {
   	return axios.get("/api/auth/logout");
   },
-  // getEventsCurrentUser: function() {
-  // 	axios.get("/api/auth/loggedinUser")  
-  // 	  .then(function (response) {
-  //   	var linkedInId = (response && response.data && response.data.id) ? response.data.id : "";
-	 //    console.log(`responseData:...... ${JSON.stringify(linkedInId)}`);
-	 //  })
-	 //  .catch(function (error) {
-	 //    console.log(error);
-	 //  });
-  // }
   getAllEvents: function() {
   	return axios.get("/api/events");
   },
-  getEventsHostedByCurrentUser: function (hostLinkedinId) {
-    // // axios.get("/api/auth/loggedinUser")
-    // //   .then(function(response) {
-    // //     var linkedinId="IJngCO4geP";
-    // //     return axios.get(`/api/users?linkedinId=${linkedinId}`);
-    // //   });
-     // var hostLinkedinId="33333596e85f07235822f6dc";
-      return axios.get(`/api/events?hostUser=${hostLinkedinId}`);
-      // return axios.get(`/api/events`);
-
+  getEventsHostedByUser: function (hostUserId) {
+      return axios.get(`/api/events?hostUser=${hostUserId}`);
   },
-  getEventsAttendedByCurrentUser: function (linkedinUrlPart) {
-      var linkedinUrlPart="kiglaze";
-      return axios.get(`/api/events?attendees=${linkedinUrlPart}`);
-      // return axios.get(`/api/events`);
+  getEventsAttendedByUser: function (attendeeUserId) {
+      return axios.get(`/api/events?attendees=${attendeeUserId}`);
+  },
+  getUserIdByLinkedinId: function(userLinkedinId) {
+      return axios.get(`/api/users?linkedinId=${userLinkedinId}`).then((res) => {
+        return (res && typeof res.data[0] !== "undefined" && typeof(res.data[0]._id) !== "undefined") ? res.data[0]._id : "";
+      });
   },
 
   getEventByName: function(eventName) {

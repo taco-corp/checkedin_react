@@ -35,6 +35,7 @@ class EventHeader extends Component {
       API.addUserToEvent(checkinObject);
       // The following line adds the checkin user to the users collection if they don't already exist
       //window.location='http://localhost:8080/api/auth/linkedin';
+      this.forceUpdate();
     };
 
   

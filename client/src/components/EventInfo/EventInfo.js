@@ -14,18 +14,18 @@ class EventInfo extends Component {
         
                     <div>
                     <h3>
-                    <u>Event Host(s):</u> <br/>
-                    {this.props.eventHost}<br/>
-                    <u>Event Location:</u> <br/>
-                    {this.props.location}<br/>
-                    <u>Event Date:</u> <br/>
-                    {this.props.location}<br/>
-                    <u>Event Time:</u> <br/>
-                    {this.props.time}<br/>
-                    <u>Event Description:</u> <br/>
-                    {this.props.description}<br/>
-                    <u>Event Url</u><br/>
-                    {this.props.eventURL}<br/>
+                    <div className="eidiv"><u>Event Host(s):</u> <br/>
+                    {this.props.eventHost}<br/></div>
+                    <div className="eidiv"><u>Event Location:</u> <br/>
+                    {this.props.location}<br/></div>
+                    <div className="eidiv"><u>Event Date:</u> <br/>
+                    {this.props.date}<br/></div>
+                    <div className="eidiv"><u>Event Time:</u> <br/>
+                    {this.props.time}<br/></div>
+                    <div className="eidiv"><u>Event Description:</u> <br/>
+                    {this.props.description}<br/></div>
+                    <div className="eidiv"><u>Event Url</u><br/>
+                    {this.props.eventURL}<br/></div>
                     </h3>
                     </div>
                 </div>  
@@ -33,19 +33,5 @@ class EventInfo extends Component {
 
     }
 }
-// const NewEvent = () => 
-//     <div className="col-md-3 thumbnail">
-//         <h1>Event Information</h1>
-
-//         <div>
-//         <h3>
-//         Event Host: Dallas Bro'Pitbull<br/>
-//         Event Location: Raleigh<br/>
-//         Event Time: 4pm<br/>
-//         Event Description: Dog Stuff<br/>
-//         </h3>
-//         </div>
-//     </div>
-
 
 export default EventInfo;

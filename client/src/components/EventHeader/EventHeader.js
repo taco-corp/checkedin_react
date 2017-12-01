@@ -35,6 +35,7 @@ class EventHeader extends Component {
       API.addUserToEvent(checkinObject);
       // The following line adds the checkin user to the users collection if they don't already exist
       //window.location='http://localhost:8080/api/auth/linkedin';
+      this.forceUpdate();
     };
 
   
@@ -47,7 +48,7 @@ class EventHeader extends Component {
 
       return (
         <div className="thumbnail center-text col-md-6 col-md-offset-3">
-             <h2 id="eventTitle" className="text-center">{this.props.event}/{this.props.eventId}</h2>
+             <h2 id="eventTitle" className="text-center">{this.props.event}</h2>
               <div className="col-md-6 col-md-offset-3">
           <button className="btn btn-primary btn-lg btn-block" id="login" onClick={this.handleCheckin}>CheckIn with LinkedIn</button>
           </div>

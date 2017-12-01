@@ -2,10 +2,10 @@
 Final Project for UNC Coding School
 
 ## Team Members:
-* **Jon Riddick** - [Jon Riddick](https://github.com/jonriddick)
-* **Zeynep Dayar** - [Zeynep Dayar](https://github.com/zdayar)
-* **Kristin Glaze** - [Kristin Glaze](https://github.com/kiglaze)
-* **Steve Murphy** - [Steve Murphy](https://github.com/stevemurphy256)
+* **Jon Riddick** - Github: [Jon Riddick](https://github.com/jonriddick)
+* **Zeynep Dayar** - Github: [Zeynep Dayar](https://github.com/zdayar)
+* **Kristin Glaze** - Github: [Kristin Glaze](https://github.com/kiglaze)
+* **Steve Murphy** - Github: [Steve Murphy](https://github.com/stevemurphy256)
 
 ## Project Description
 

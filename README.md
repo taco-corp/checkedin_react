@@ -2,14 +2,14 @@
 Final Project for UNC Coding School
 
 ## Team Members:
-* **Jon Riddick** - Github: [Jon Riddick](https://github.com/jonriddick)
-* **Zeynep Dayar** - Github: [Zeynep Dayar](https://github.com/zdayar)
-* **Kristin Glaze** - Github: [Kristin Glaze](https://github.com/kiglaze)
-* **Steve Murphy** - Github: [Steve Murphy](https://github.com/stevemurphy256)
+* **Jon Riddick** - GitHub: [Jon Riddick](https://github.com/jonriddick)
+* **Zeynep Dayar** - GitHub: [Zeynep Dayar](https://github.com/zdayar)
+* **Kristin Glaze** - GitHub: [Kristin Glaze](https://github.com/kiglaze)
+* **Steve Murphy** - GitHub: [Steve Murphy](https://github.com/stevemurphy256)
 
 ## Project Description
 
-CheckedIn_React is a full-stack MERN app developed to assist event Organizers and Hosts with the task of networking with their event Attendees. The app uses the Passport Linkedin oauth 2.0 library to retrieve user profile information for both the Host as well as the Attendees and populate a Mongo Database. Once the event is complete the Host can easily retrieve the Linkedin contact information for any or all of their Attendees and connect with them on Linkedin.
+CheckedIn_React is a full-stack MERN app developed to assist event Organizers and Hosts with the task of networking with their event Attendees. The app uses the Passport Linkedin OAuth 2.0 library to retrieve user profile information for both the Host as well as the Attendees and populate a Mongo Database. Once the event is complete the Host can easily retrieve the Linkedin contact information for any or all of their Attendees and connect with them on Linkedin.
 
 ## Getting Started on your local machine
 
@@ -31,6 +31,10 @@ CheckedIn_React is a full-stack MERN app developed to assist event Organizers an
 ### Prerequisites
 
 
+Run yarn install in both the main (checkedin) folder and in the client folder, then yarn start in the main folder. 
+Also when you run this, please make sure you have mongo running locally (mongod and mongo).
+
+
 
 A user has to sign up using an email address and a password before they can use the app. Once signed up, the user can log in to the app. On the main page, the rooms in the user's house are displayed along with the items in each room. The user can add new rooms, and can also add items to each room. Items can also be removed. Finally, the user can search for items in their house.  
 
@@ -42,5 +46,4 @@ A user has to sign up using an email address and a password before they can use 
 - Bootstrap is used for styling.  
 - The app runs on port 3000 locally.
 
-Run yarn install in both the main (checkedin) folder and in the client folder, then yarn start in the main folder. 
-Also when you run this, please make sure you have mongo running locally (mongod and mongo).
+

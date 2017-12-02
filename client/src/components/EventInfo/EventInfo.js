@@ -24,8 +24,8 @@ class EventInfo extends Component {
                     {this.props.time}<br/></div>
                     <div className="eidiv"><u>Event Description:</u> <br/>
                     {this.props.description}<br/></div>
-                    <div className="eidiv"><u>Event Url</u><br/>
-                    {this.props.eventURL}<br/></div>
+                    <div className="eidiv"><u>Event URL</u><br/>
+                    <a href={this.props.eventURL} target="_blank">Click Here</a> <br/></div>
                     </h3>
                     </div>
                 </div>  

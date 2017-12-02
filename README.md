@@ -30,6 +30,7 @@ CheckedIn_React is a full-stack MERN app developed to assist event Organizers an
 - Express Session
 
 ## Demo Screenshots
+# **Login Page**
 ![Event Host Login](client/public/assets/img/login.png)
 
 ## WEBSITE LINK

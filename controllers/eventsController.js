@@ -68,14 +68,32 @@ module.exports = {
         .catch(err => res.status(422).json(err));
     },
     //This function adds an attendee to an event when the check in button is clicked
+    //it makes sure you don't check in to an event if you are already checked in
     addAttendee: function (req, res){
         //console.log("Add attendee");
         db.Event
-        .findByIdAndUpdate(
-            req.body.eventId, 
-            {$push: {'attendees': req.body}})
-           // {safe:true, upsert: true, new: true})
-        .then(dbModel => res.json(dbModel))
+        .findOne({_id: req.body.eventId})
+        .then(event => {
+            let alreadyCheckedIn = false;
+            for (let i=0; i<event.attendees.length; i++) {
+                if (event.attendees[i].id === req.body.id) {
+                    alreadyCheckedIn = true;
+                    break;
+                }
+            }
+            if(alreadyCheckedIn === false) {
+                db.Event
+                .findByIdAndUpdate(
+                        req.body.eventId,
+                        {$push: {'attendees': req.body}})
+                // {safe:true, upsert: true, new: true})
+                .then(dbModel => res.json(dbModel))
+                .catch(err => res.status(422).json(err));
+            }
+            else {
+                res.json("already checked in")
+            }
+        })
         .catch(err => res.status(422).json(err));
     }
 };

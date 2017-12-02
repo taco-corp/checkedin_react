@@ -34,24 +34,24 @@ Event Hosts start here: Login Page
 ![Event Host Login](client/public/assets/img/login.png)
 Clicking on the login button creates a local account and allows the Host to create an event.
 
-----------------------------------------------------------
+--------------------------------------------------------------------
 
 Once the host is logged in they go to the Home page:
 ![User Home](client/public/assets/img/home.png)
 The Host can view all the events they have hosted or attended as well as any Attendee they have saved from a previous event. To create a new event click on the `Create New Event` button.
 
-----------------------------------------------------------
+--------------------------------------------------------------------
 
 Fill out the form and click on `Create Event`:
 ![Create Event Form](client/public/assets/img/createEvent.png)
 
-----------------------------------------------------------
+--------------------------------------------------------------------
 
 The Event Page:
 ![Event](client/public/assets/img/event.png)
-Event Attendees will start here. Using their own device, click on the `CheckIn with LinkedIn` button. This will add them to the Event Guests component. Clicking on the `Visit on LinkedIn` takes you to their Linkedin so they can be added to your network.
+Event Attendees will start here. Using their own device, click on the `CheckIn with LinkedIn` button. This will add them to the Event Guests component. Clicking on the `Visit on LinkedIn` button takes you to their Linkedin so they can be added to your network.
 
-----------------------------------------------------------
+--------------------------------------------------------------------
 
 
 

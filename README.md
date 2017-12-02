@@ -22,7 +22,15 @@ CheckedIn_React is a full-stack MERN app developed to assist event Organizers an
 - You can open your browser and navigate to localhost:3000, alternatively.
 
 ## Technologies used
+- MongoDB
+- Express
+- ReactJS
+- Node
+- Axios
+- Express Session
 
+## Demo Screenshots
+![Event Host Login](client/public/assets/img/login.png)
 
 ## WEBSITE LINK
 

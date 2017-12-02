@@ -56,7 +56,7 @@ getUserInfo = () => {
 render() {
   if(this.props.currentUserId) {
 	return (
-    <div className="col-md-5 col-md-offset-2 bottom thumbnail text-center">
+    <div className="col-md-4 col-md-offset-2 bottom thumbnail text-center">
         <div className="thumbnail text-center">
         <h3>My Events</h3>
         </div>

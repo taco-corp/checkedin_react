@@ -23,6 +23,7 @@ class Home extends Component {
         })
       }
   render() {
+    // Removed <SavedPeople /> .
     return (
        
         <div>
@@ -32,7 +33,6 @@ class Home extends Component {
             <HistoryOfEvents 
                 currentUserId = {this.state.currentUserId}
             />
-            <SavedPeople />
         </div>
         );
     }

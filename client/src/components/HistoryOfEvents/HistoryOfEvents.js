@@ -60,13 +60,6 @@ render() {
         <div className="thumbnail text-center">
         <h3>My Events</h3>
         </div>
-        <p>{`HAHAHAH: ${this.props.currentUserId}`}</p>
-        <p>{this.state.loggedInUserId}</p>
-        <p>{this.state.loggedInUserProfileUrl}</p>
-        <p>{`eventsHostedResJson:... ${this.state.eventsHostedResJson}`}</p>
-        <p>{`eventsAttendedResJson:... ${this.state.eventsAttendedResJson}`}</p>
-        <p>{`TEST JSON:... ${this.state.testJson}`}</p>
-        <a href="/event"> <h4>Bark in the Park  |  11/06/17  |  Hosted by: Dallas Bro'Pitbull</h4></a>
             <h4>Hosted</h4>
             <List>
             {

@@ -53,10 +53,6 @@ class Navbar extends Component {
         <li className={window.location.pathname === "/newevent" ? "active" : ""}>
           <Link to="/newevent">Create Event</Link>
         </li>
-        <li
-          className={window.location.pathname === "/event" ? "active" : ""}>
-          <Link to="/event">Event</Link>
-        </li>
       </ul>
       <ul className="nav navbar-nav navbar-right">
         <li className="loggedin-user"><span className="glyphicon glyphicon-user"></span> {this.state.loggedInUserName}</li>

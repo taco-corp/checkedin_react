@@ -32,6 +32,7 @@ app.use(routes);
 
 // Set up promises with mongoose
 mongoose.Promise = global.Promise;
+// mongoose.Promise = global.Promise;
 
 // Connect to the Mongo DB
 mongoose.connect(

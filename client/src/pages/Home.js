@@ -7,38 +7,34 @@ import SavedPeople from "../components/SavedPeople";
 import Row from "../components/Row";
 import API from "../utils/API.js";
 
-
-
 class Home extends Component {
     state = {
-        currentUserId: "5a1ccd5fee8d7027c4c53e63"
+        currentUserId: "",
+        currentUserLinkedinId: ""
     };
-    componentDidMount() {
-        this.setUpCurrentUserId();
+    componentWillMount() {
+        this.setUpCurrentUserStates();
       }
-      setUpCurrentUserId = () => {
-        var currentUserLinkedinId = localStorage.getItem("id");
-        API.getUserIdByLinkedinId(currentUserLinkedinId).then((res) => {
-            this.setState({currentUserId: res});
-        })
+
+      setUpCurrentUserStates = () => {
+        this.setState({currentUserLinkedinId: localStorage.getItem("id")});
+        this.setState({currentUserId: localStorage.getItem("user")});
+
       }
   render() {
     return (
-       
         <div>
             <Row> 
                 <NewEvent /><SearchEvent />
             </Row>
             <HistoryOfEvents 
                 currentUserId = {this.state.currentUserId}
+                currentUserLinkedinId = {this.state.currentUserLinkedinId}
             />
-            <SavedPeople />
+
         </div>
         );
     }
 }
-
-
-
 
 export default Home;

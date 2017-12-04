@@ -11,7 +11,7 @@ class EventSearchResults extends Component {
     componentDidMount() {}
 
     render() {
-        if (this.props.searchResults !== null) {
+        if (this.props.searchResults !== null && typeof this.props.searchResults !== "undefined") {
             return (
                     <div className="col-md-4 bottom thumbnail text-center">
                         <div className="text-center">

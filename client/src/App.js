@@ -18,26 +18,24 @@ class App extends Component {
     componentDidMount() {
         API.getUserInfo()
         .then(res => {
-            //console.log("Response Data", res.data);
-            localStorage.setItem("id", res.data.id);
-            localStorage.setItem("displayName", res.data.displayName);
-            localStorage.setItem("picture", res.data._json.pictureUrl); 
-            localStorage.setItem("profileURL", res.data._json.publicProfileUrl);
-            API.getUserIdByLinkedinId(localStorage.getItem("id")).then((resUserId) => {
-                localStorage.setItem("user", resUserId);
-            });
-            
-                    if (res && res.data && res.data.displayName !== null)
-                        this.setState({isLoggedIn: true});
-                    else
-                    // *****************************************************
-                    //    change the false to true in the next line if
-                    //       you want to disable the login function
-                    // *****************************************************
-                        this.setState({isLoggedIn: false});
-                }
-
-        )
+            if (res && res.data && res.data.displayName !== null) {
+                this.setState({isLoggedIn: true});
+                //console.log("Response Data", res.data);
+                localStorage.setItem("id", res.data.id);
+                localStorage.setItem("displayName", res.data.displayName);
+                localStorage.setItem("picture", res.data._json.pictureUrl); 
+                localStorage.setItem("profileURL", res.data._json.publicProfileUrl);
+                API.getUserIdByLinkedinId(localStorage.getItem("id")).then((resUserId) => {
+                    localStorage.setItem("user", resUserId);
+                });
+            } else {                        
+                // *****************************************************
+                //    change the false to true in the next line if
+                //       you want to disable the login function
+                // *****************************************************
+                this.setState({isLoggedIn: false});
+            }
+        })
         .catch(err => console.log(err));
     }
 

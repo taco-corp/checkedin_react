@@ -4,9 +4,9 @@ import NewEvent from "../components/NewEvent";
 import SearchEvent from "../components/SearchEvent";
 import HistoryOfEvents from "../components/HistoryOfEvents";
 import EventSearchResults from "../components/EventSearchResults";
-import SavedPeople from "../components/SavedPeople";
+// import SavedPeople from "../components/SavedPeople";
 import Row from "../components/Row";
-import API from "../utils/API.js";
+// import API from "../utils/API.js";
 
 class Home extends Component {
     state = {

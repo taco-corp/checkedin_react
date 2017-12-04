@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../App.css';
 import EventInfo from "../components/EventInfo";
 import EventGuests from "../components/EventGuests";
-import EventHeader from "../components/EventHeader";
+// import EventHeader from "../components/EventHeader";
 import API from "../utils/API";
 
 
@@ -59,7 +59,7 @@ class Event extends Component {
   render() {
     
     if (this.state.attendees){
-      let id = 1;
+      // let id = 1;
     return (
       
       <div className="App">

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import temp from '../../snippet'
+// import temp from '../../snippet'
 import "./EventGuests.css";
-import Attendee from '../Attendee';
-import API from "../../utils/API";
+// import Attendee from '../Attendee';
+// import API from "../../utils/API";
 
 class EventGuests extends Component {
     constructor(props){

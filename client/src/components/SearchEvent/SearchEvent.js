@@ -32,7 +32,7 @@ class SearchEvent extends Component {
 
     render() {
         return (
-                <div className="thumbnail col-md-4">
+                <div className="col-md-4">
                     <form className="col-md-8 col-md-offset-2" role="search">
                         <div className="input-group">
                             <input className="form-control"

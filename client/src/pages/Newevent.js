@@ -49,7 +49,7 @@ class Newevent extends Component {
     render() {
         return (
                 <div>
-                    <div className="Event col-md-6 col-md-offset-3 thumbnail">
+                    <div className="Event col-md-6 col-md-offset-3">
                         <h2 id="eventTitle" className="text-center">Create Your Event</h2>
 
                         <form id="event-form" className="container col-md-12">

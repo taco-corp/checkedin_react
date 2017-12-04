@@ -63,7 +63,7 @@ class Event extends Component {
     return (
       
       <div className="App">
-        <div className="thumbnail center-text col-md-6 col-md-offset-3">
+        <div className="center-text col-md-6 col-md-offset-3">
              <h2 id="eventTitle" className="text-center">{this.state.eventName}</h2>
               <div className="col-md-6 col-md-offset-3">
           <button className="btn btn-primary btn-lg btn-block" id="login" onClick={this.handleCheckin}>CheckIn with LinkedIn</button>

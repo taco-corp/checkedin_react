@@ -9,9 +9,9 @@ class EventInfo extends Component {
     render(){
         console.log("event info props" , this.props)
         return(
-            <div className="col-md-3 thumbnail">
+            <div className="col-md-3">
                 <h1>Event Information</h1>
-                <div>
+                <div className="thumbnail">
                     <div className="eidiv"><h3><u>Event Host(s):</u></h3>
                     <h4>{this.props.eventHost}</h4></div>
                     <div className="eidiv"><h3><u>Event Location:</u> </h3>

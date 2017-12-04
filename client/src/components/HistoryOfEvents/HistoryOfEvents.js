@@ -38,7 +38,7 @@ render() {
               this.state.eventsHosted.map(eventHosted => {
 	              return (
 	                <ListItem key={eventHosted.id}>
-	                  <a href={`/${eventHosted.eventName}`}><p>{eventHosted.eventName} | {eventHosted.eventDate} | Hosted by: {eventHosted.hostUser}</p></a>
+	                  <a href={`/event/${eventHosted.eventName}`}><p>{eventHosted.eventName} | {eventHosted.eventDate} | Hosted by: {eventHosted.hostUser}</p></a>
 	                </ListItem>
 	              );
 	            })
@@ -50,7 +50,7 @@ render() {
               this.state.eventsAttended.map(eventHosted => {
 	              return (
 	                <ListItem key={eventHosted.id}>
-	                  <a href={`/${eventHosted.eventName}`}><p>{eventHosted.eventName} | {eventHosted.eventDate} | Hosted by: {eventHosted.hostUser}</p></a>
+	                  <a href={`/event/${eventHosted.eventName}`}><p>{eventHosted.eventName} | {eventHosted.eventDate} | Hosted by: {eventHosted.hostUser}</p></a>
 	                </ListItem>
 	              );
 	            })

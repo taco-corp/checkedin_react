@@ -32,13 +32,13 @@ render() {
         <div className="thumbnail text-center">
         <h3>My Events</h3>
         </div>
-            <h4>Hosted</h4>
+            <h4>Created By Me</h4>
             <List>
             {
               this.state.eventsHosted.map(eventHosted => {
 	              return (
 	                <ListItem key={eventHosted.id}>
-	                  <a href={`/event/${eventHosted.eventName}`}><p>{eventHosted.eventName} | {eventHosted.eventDate} | Hosted by: {eventHosted.hostUser}</p></a>
+	                  <a href={`/event/${eventHosted.eventName}`}><p>{eventHosted.eventName} | {eventHosted.eventDate} | Hosted by: {eventHosted.eventHosts}</p></a>
 	                </ListItem>
 	              );
 	            })
@@ -50,7 +50,7 @@ render() {
               this.state.eventsAttended.map(eventHosted => {
 	              return (
 	                <ListItem key={eventHosted.id}>
-	                  <a href={`/event/${eventHosted.eventName}`}><p>{eventHosted.eventName} | {eventHosted.eventDate} | Hosted by: {eventHosted.hostUser}</p></a>
+	                  <a href={`/event/${eventHosted.eventName}`}><p>{eventHosted.eventName} | {eventHosted.eventDate} | Hosted by: {eventHosted.eventHosts}</p></a>
 	                </ListItem>
 	              );
 	            })

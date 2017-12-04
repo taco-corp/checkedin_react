@@ -1,8 +1,6 @@
 import "./EventSearchResults.css";
 import {List, ListItem} from "../../components/List";
 import React, {Component} from "react";
-import API from "../../utils/API";
-
 
 class EventSearchResults extends Component {
     state = {};

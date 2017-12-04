@@ -11,39 +11,24 @@ class EventInfo extends Component {
         return(
             <div className="col-md-3 thumbnail">
                 <h1>Event Information</h1>
-        
-                    <div>
-                    <h3>
-                    <u>Event Host:</u> <br/>
-                    {this.props.eventHost}<br/>
-                    <u>Event Location:</u> <br/>
-                    {this.props.location}<br/>
-                    <u>Event Time:</u> <br/>
-                    {this.props.time}<br/>
-                    <u>Event Description:</u> <br/>
-                    {this.props.description}<br/>
-                    <u>Event Url</u><br/>
-                    {this.props.eventURL}<br/>
-                    </h3>
-                    </div>
-                </div>  
+                <div>
+                    <div className="eidiv"><h3><u>Event Host(s):</u></h3>
+                    <h4>{this.props.eventHost}</h4></div>
+                    <div className="eidiv"><h3><u>Event Location:</u> </h3>
+                    <h4>{this.props.location}</h4></div>
+                    <div className="eidiv"><h3><u>Event Date:</u> </h3>
+                    <h4>{this.props.date}</h4></div>
+                    <div className="eidiv"><h3><u>Event Time:</u> </h3>
+                    <h4>{this.props.time}</h4></div>
+                    <div className="eidiv"><h3><u>Event Description:</u> </h3>
+                    <h4>{this.props.description}</h4></div>
+                    <div className="eidiv"><h3><u>Event URL</u></h3>
+                    <a href={this.props.eventURL} target="_blank">Click Here</a> </div>
+                </div>
+            </div>  
         );
 
     }
 }
-// const NewEvent = () => 
-//     <div className="col-md-3 thumbnail">
-//         <h1>Event Information</h1>
-
-//         <div>
-//         <h3>
-//         Event Host: Dallas Bro'Pitbull<br/>
-//         Event Location: Raleigh<br/>
-//         Event Time: 4pm<br/>
-//         Event Description: Dog Stuff<br/>
-//         </h3>
-//         </div>
-//     </div>
-
 
 export default EventInfo;

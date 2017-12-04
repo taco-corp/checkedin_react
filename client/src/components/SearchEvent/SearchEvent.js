@@ -17,10 +17,17 @@ class SearchEvent extends Component {
     handleSearch = event => {
         event.preventDefault();
         console.log("HANDLE SEARCH");
-        API.searchEvent(this.state.searchTerm);
-        this.setState({
-            searchTerm: ''
-        });
+        API.searchEvent(this.state.searchTerm)
+        .then(results => {
+            console.log(results);
+            this.props.newSearchResultsAvailable(results);
+            this.setState({
+                searchTerm: ''
+            });
+        })
+        .catch(err => console.log(err));
+
+
     };
 
     render() {

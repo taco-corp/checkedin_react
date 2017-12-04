@@ -14,7 +14,7 @@ class EventSearchResults extends Component {
         if (this.props.searchResults !== null) {
             return (
                     <div className="col-md-4 bottom thumbnail text-center">
-                        <div className="thumbnail text-center">
+                        <div className="text-center">
                             <h3>Event Search Results</h3>
                             <List>
                                 {

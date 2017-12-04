@@ -13,7 +13,7 @@ class NewEvent extends Component {
     render() {
         return (
             <div className="App text-center">
-                <div className="thumbnail col-md-4 col-md-offset-2">
+                <div className="col-md-4 col-md-offset-2">
                 <Row className="col-md-12">
                     <div id="createEventBtn" className="container col-md-8 col-md-offset-3">
                     <button className="btn btn-primary btn-block" id="createEvent"

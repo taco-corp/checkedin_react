@@ -13,7 +13,7 @@ class EventGuests extends Component {
         console.log("props from EG", this.props)
         let id = 1;
         return(
-            <div className="col-md-7 col-md-offset-1 thumbnail">
+            <div className="col-md-7 col-md-offset-1">
            {console.log("render this.state", this.state)}
                 
                 <div className="">

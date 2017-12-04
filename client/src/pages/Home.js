@@ -8,51 +8,42 @@ import SavedPeople from "../components/SavedPeople";
 import Row from "../components/Row";
 import API from "../utils/API.js";
 
-
 class Home extends Component {
     state = {
-        currentUserId: "5a1ccd5fee8d7027c4c53e63",
-        eventSearchResults: null
+        currentUserId: "",
+        currentUserLinkedinId: ""
     };
+    componentWillMount() {
+        this.setUpCurrentUserStates();
+      }
 
-    componentDidMount() {
-        this.setUpCurrentUserId();
-    }
+      setUpCurrentUserStates = () => {
+        this.setState({currentUserLinkedinId: localStorage.getItem("id")});
+        this.setState({currentUserId: localStorage.getItem("user")});
 
-    setUpCurrentUserId = () => {
-        let currentUserLinkedinId = localStorage.getItem("id");
-        API.getUserIdByLinkedinId(currentUserLinkedinId).then((res) => {
-            this.setState({currentUserId: res});
-        })
-    };
-
+      }
     newSearchResultsAvailable = (results) => {
-        this.setState({eventSearchResults: results});
+      this.setState({eventSearchResults: results});
     };
-
-    render() {
-        // Removed <SavedPeople /> .
-        return (
-
-                <div>
-                    <Row>
-                        <NewEvent/>
-                        <SearchEvent
-                                newSearchResultsAvailable={this.newSearchResultsAvailable}
-                        />
-                    </Row>
-                    <Row>
-                        <HistoryOfEvents
-                                currentUserId={this.state.currentUserId}
-                        />
-                        <EventSearchResults
-                                searchResults={this.state.eventSearchResults}
-                        />
-                    </Row>
-                </div>
+  render() {
+    return (
+        <div>
+            <Row> 
+                <NewEvent/>
+                <SearchEvent
+                        newSearchResultsAvailable={this.newSearchResultsAvailable}
+                />
+            </Row>
+            <HistoryOfEvents 
+                currentUserId = {this.state.currentUserId}
+                currentUserLinkedinId = {this.state.currentUserLinkedinId}
+            />
+            <EventSearchResults
+                searchResults={this.state.eventSearchResults}
+            />
+        </div>
         );
     }
 }
-
 
 export default Home;

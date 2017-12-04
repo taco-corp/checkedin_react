@@ -14,8 +14,8 @@ export default {
   getEventsHostedByUser: function (hostUserId) {
       return axios.get(`/api/events?hostUser=${hostUserId}`);
   },
-  getEventsAttendedByUser: function (attendeeUserId) {
-      return axios.get(`/api/events?attendees=${attendeeUserId}`);
+  getEventsAttendedByUser: function (attendeeLinkedinId) {
+      return axios.get(`/api/events?attendees.id=${attendeeLinkedinId}`);
   },
   getUserIdByLinkedinId: function(userLinkedinId) {
       return axios.get(`/api/users?linkedinId=${userLinkedinId}`).then((res) => {

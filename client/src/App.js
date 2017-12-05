@@ -19,7 +19,6 @@ class App extends Component {
         API.getUserInfo()
         .then(res => {
             if (res && res.data && res.data.displayName !== null) {
-                this.setState({isLoggedIn: true});
                 //console.log("Response Data", res.data);
                 localStorage.setItem("id", res.data.id);
                 localStorage.setItem("displayName", res.data.displayName);
@@ -27,6 +26,7 @@ class App extends Component {
                 localStorage.setItem("profileURL", res.data._json.publicProfileUrl);
                 API.getUserIdByLinkedinId(localStorage.getItem("id")).then((resUserId) => {
                     localStorage.setItem("user", resUserId);
+                    this.setState({isLoggedIn: true});
                 });
             } else {                        
                 // *****************************************************

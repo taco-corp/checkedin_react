@@ -20,6 +20,9 @@ CheckedIn_React is a full-stack MERN app developed to assist event Organizers an
 - Change back into the project folder and run `yarn start`.
 - The app should open in the browser.
 - You can open your browser and navigate to localhost:3000, alternatively.
+- You will need to obtain the following credentials: `LINKEDIN_CLIENT_ID` and `LINKEDIN_CLIENT_SECRET` from https://developer.linkedin.com/#
+
+
 
 ## Technologies used
 - MongoDB
@@ -31,9 +34,21 @@ CheckedIn_React is a full-stack MERN app developed to assist event Organizers an
 - Express Session
 
 ## Demo Screenshots
-Event Hosts start here: Login Page
+Start here: Login Page
 ![Event Host Login](client/public/assets/img/login.png)
-Clicking on the login button creates a local account and allows the Host to create an event.
+Clicking on the login button creates a local account and contacts linkedin.
+
+--------------------------------------------------------------------
+
+Linkedin Page
+![Linkedin Login](client/public/assets/img/linkedin.png)
+Enter LinkedIn credentials.
+
+--------------------------------------------------------------------
+
+Linkedin Permissions Page
+![Linkedin Permissions](client/public/assets/img/permissions.png)
+Authorize LinkedIn permissions.
 
 --------------------------------------------------------------------
 
@@ -43,14 +58,9 @@ The Host can view all the events they have hosted or attended as well as any Att
 
 --------------------------------------------------------------------
 
-Fill out the form and click on `Create Event`:
-![Create Event Form](client/public/assets/img/createEvent.png)
-
---------------------------------------------------------------------
-
 The Event Page:
 ![Event](client/public/assets/img/event.png)
-Event Attendees will start here. Using their own device, click on the `CheckIn with LinkedIn` button. This will add them to the Event Guests component. Clicking on the `Visit on LinkedIn` button takes you to their Linkedin so they can be added to your network.
+Clicking on the `CheckIn with LinkedIn` button adds them to your event. Clicking on the `Visit on LinkedIn` button takes you to their Linkedin page so they can be added to your network.
 
 --------------------------------------------------------------------
 
@@ -65,6 +75,8 @@ The User collection is populated with profile information retrieved from the Lin
 
 
 ## WEBSITE LINK
+
+https://checkedinapp.herokuapp.com
 
 
 

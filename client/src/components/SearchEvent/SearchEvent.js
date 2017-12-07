@@ -21,9 +21,8 @@ class SearchEvent extends Component {
         });
     };
 
-    handleSearch = event => {
+    handleSearch = (event) => {
         event.preventDefault();
-        console.log("HANDLE SEARCH");
         API.searchEvent(this.state.searchTerm)
         .then(results => {
             console.log(results);
@@ -33,8 +32,6 @@ class SearchEvent extends Component {
             });
         })
         .catch(err => console.log(err));
-
-
     };
 
     onChange = (event, { newValue }) => {
@@ -72,7 +69,7 @@ class SearchEvent extends Component {
 
       renderSuggestion = (suggestion) => {
         return (
-          <span><a href={`/event/${encodeURI(suggestion.eventName)}`}>{JSON.stringify(suggestion.eventName)}</a></span>
+          <span>{JSON.stringify(suggestion.eventName)}</span>
         );
       }
 
@@ -82,10 +79,11 @@ class SearchEvent extends Component {
            // Autosuggest will pass through all these props to the input. 
            const inputProps = {
              placeholder: 'Search Events',
-             value,
              onChange: this.onChange,
              id: "inputSearchTerm",
-             name: "searchTerm"
+             name: "searchTerm",
+             value: this.state.searchTerm,
+             onChange: this.handleInputChange
            };
         return (
                 <div className="col-md-4">
@@ -105,9 +103,10 @@ class SearchEvent extends Component {
                                 getSuggestionValue={this.getSuggestionValue}
                                 renderSuggestion={this.renderSuggestion}
                                 inputProps={inputProps}
+                                alwaysRenderSuggestions={true}
                             />
                             <div className="input-group-btn">
-                                <button className="btn btn-default" type="submit" onClick={this.handleSearch}>
+                                <button className="btn btn-default" onClick={this.handleSearch}>
                                     <i className="glyphicon glyphicon-search"></i>
                                 </button>
                             </div>

@@ -36,7 +36,7 @@ CheckedIn_React is a full-stack MERN app developed to assist event Organizers an
 ## Demo Screenshots
 Start here: Login Page
 ![Event Host Login](client/public/assets/img/login.png)
-Clicking on the login button creates a local account and allows contacts linkedin.
+Clicking on the login button creates a local account and contacts linkedin.
 
 --------------------------------------------------------------------
 
@@ -60,7 +60,7 @@ The Host can view all the events they have hosted or attended as well as any Att
 
 The Event Page:
 ![Event](client/public/assets/img/event.png)
-Clicking on the `CheckIn with LinkedIn` button adds them to your event. Clicking on the `Visit on LinkedIn` button takes you to their Linkedin so they can be added to your network.
+Clicking on the `CheckIn with LinkedIn` button adds them to your event. Clicking on the `Visit on LinkedIn` button takes you to their Linkedin page so they can be added to your network.
 
 --------------------------------------------------------------------
 

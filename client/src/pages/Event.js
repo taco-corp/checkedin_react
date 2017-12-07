@@ -29,12 +29,14 @@ class Event extends Component {
       picture: localStorage.getItem('picture'),
       profileURL: localStorage.getItem('profileURL')
     };
-    API.addUserToEvent(checkinObject);
-    API.getEventByName(this.state.eventName)
-    .then(res => {
-     let temp = res.data["0"].attendees
-     this.setState({attendees:temp})
-    })
+    API.addUserToEvent(checkinObject)
+      .then(results => {
+          API.getEventByName(this.state.eventName)
+          .then(res => {
+              let temp = res.data["0"].attendees;
+              this.setState({attendees: temp})
+          })
+      });
   };
 
   componentDidMount() {

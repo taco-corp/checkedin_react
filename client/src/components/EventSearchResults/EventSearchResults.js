@@ -1,6 +1,8 @@
 import "./EventSearchResults.css";
 import {List, ListItem} from "../../components/List";
 import React, {Component} from "react";
+import API from "../../utils/API";
+
 
 class EventSearchResults extends Component {
     state = {};
@@ -17,7 +19,7 @@ class EventSearchResults extends Component {
                             <List>
                                 {
                                     this.props.searchResults.data.map(evt => {
-                                        let url = "/event/" + evt.eventName;
+                                        let url = "/event/" + encodeURI(evt.eventName);
                                         return (
                                                 <ListItem key={evt._id}>
                                                     <a href={url}>{evt.eventName}</a>

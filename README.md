@@ -20,6 +20,9 @@ CheckedIn_React is a full-stack MERN app developed to assist event Organizers an
 - Change back into the project folder and run `yarn start`.
 - The app should open in the browser.
 - You can open your browser and navigate to localhost:3000, alternatively.
+- You will need to obtain the following credentials: `LINKEDIN_CLIENT_ID` and `LINKEDIN_CLIENT_SECRET` from https://developer.linkedin.com/#
+
+
 
 ## Technologies used
 - MongoDB
@@ -72,6 +75,8 @@ The User collection is populated with profile information retrieved from the Lin
 
 
 ## WEBSITE LINK
+
+http://www.checkedinapp.herokuapp.com
 
 
 

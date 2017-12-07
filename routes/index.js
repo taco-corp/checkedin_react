@@ -7,9 +7,9 @@ router.use("/api", apiRoutes);
 
 // If no API routes are hit, send the React app
 router.use(function(req, res) {
-    res.redirect('http://localhost:3000/');
+    //res.redirect('http://localhost:3000/');
 
-    //res.sendFile(path.join(__dirname, "../client/public/index.html"));
+    res.sendFile(path.join(__dirname, "../client/public/index.html"));
 });
 
 module.exports = router;

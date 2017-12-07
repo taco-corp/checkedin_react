@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import "./SearchEvent.css";
+import theme from "./SearchEvent.css";
 import API from "../../utils/API";
 import Autosuggest from 'react-autosuggest';
 
@@ -104,6 +104,7 @@ class SearchEvent extends Component {
                                 renderSuggestion={this.renderSuggestion}
                                 inputProps={inputProps}
                                 alwaysRenderSuggestions={true}
+                                theme={theme}
                             />
                             <div className="input-group-btn">
                                 <button className="btn btn-default" onClick={this.handleSearch}>

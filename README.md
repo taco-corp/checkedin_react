@@ -76,7 +76,7 @@ The User collection is populated with profile information retrieved from the Lin
 
 ## WEBSITE LINK
 
-http://www.checkedinapp.herokuapp.com
+https://checkedinapp.herokuapp.com
 
 
 
